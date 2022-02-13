@@ -1,0 +1,36 @@
+mixin generateMenu(menu)
+    li.nav-link
+        p.nav-link-title= menu.title
+        .submenu.slide-menu
+            .header
+                img(src="/images/navigate_before.svg" class="fas fa-arrow-left")
+                span= menu.title
+            .link-grid
+                each link in menu.items
+                    .sub-link
+                        a(href=link.url)
+                            strong= link.name
+                            small= link.desc
+
+nav
+    .nav-left
+        a(href='/')
+            img(src="/images/aicte-logo.png" alt="aicte-logo" id='aicte-logo')
+        .menu-icon-container
+            img(src="/images/menu-icon.svg" class="fas fa-bars" id='menu-icon')
+            img(src="/images/close-icon.svg" class="fas fa-times hide" id='close-icon')
+
+    .nav-right 
+        .link-container
+            .nav-links#main-nav 
+                each menu in navData.slice(0, 3)
+                    +generateMenu(menu)
+                li#extended-nav-cover
+                    p#info Information 
+                        img(src="/images/dropdown.svg" class="fas fa-caret-down" id="info-down-arrow") 
+
+            ul(class="nav-links" id="extended-nav")
+                each menu in navData.slice(3)
+                    +generateMenu(menu) 
+        button.btn-highlight Login
+

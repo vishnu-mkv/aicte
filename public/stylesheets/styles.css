@@ -1,0 +1,111 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&family=Nunito:ital,wght@0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&family=Poppins&display=swap");
+
+html {
+    font-size: 14px;
+    font-family: "Nunito", sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --orange: #fb710d;
+    --orange2: #ff6a3c;
+    --blue: #0a1045;
+    --yellow: #f9e900;
+    --black: #232323;
+    --grey: #fffff0;
+    --milk-white: #fffef7;
+    --white: #ffffff;
+    --fs-xl: 1.4rem;
+    --fs-bg: 1.25rem;
+    --fs-lg: 1.125rem;
+    --fs-md: 1rem;
+    --fs-sm: 0.8rem;
+    --nav-height: 8vh;
+    --lr-padding: 1.5em;
+}
+
+html,
+body {
+    overflow-x: hidden;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+#main-content {
+    padding-inline: var(--lr-padding);
+}
+
+/* <button class="btn-highlight></button> */
+.btn-highlight {
+    padding: 0.2em 0.4em;
+    background-color: var(--orange);
+    border: none;
+    border-radius: 0.3em;
+    color: white;
+    height: fit-content;
+}
+
+/* <h1 class="page-title"></h1> */
+.page-title {
+    text-transform: uppercase;
+    font-size: var(--fs-xl);
+    padding: 0.25em 1em 0.25em 0.25em;
+    background-color: var(--orange2);
+    color: var(--white);
+    font-weight: 500;
+    border-bottom: 3px solid var(--black);
+    margin-bottom: 1em;
+    width: fit-content;
+}
+
+/*a(href='/' class="btn-more") 
+        span Know more  
+        img(src="/images/readmore.svg" alt="readmore" id="readmore")*/
+.btn-more {
+    display: flex;
+    gap: 0.4em;
+    padding: 0.2em 0.4em;
+    background-color: var(--blue);
+    border: none;
+    border-radius: 0.3em;
+    color: white;
+    width: fit-content;
+}
+
+.btn-more #readmore {
+    width: 1rem;
+    aspect-ratio: 1;
+}
+
+.sub-title {
+    font-size: var(--fs-bg);
+    font-weight: 600;
+    text-transform: capitalize;
+    border-bottom: 3px solid var(--orange);
+    width: fit-content;
+    --xtra-len: 2em;
+}
+
+/* h2.sub-title.center */
+.sub-title.center {
+    padding: 0 var(--xtra-len);
+    margin-inline: auto;
+}
+
+/* h2.sub-title.left */
+.sub-title.left {
+    padding-right: var(--xtra-len);
+}
+
+/* h2.sub-title.right */
+.sub-title.right {
+    padding-left: var(--xtra-len);
+    margin-left: auto;
+}

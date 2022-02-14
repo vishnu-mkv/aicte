@@ -47,4 +47,15 @@ $('#close-icon').on('click', () => {
     $('.nav-right').removeClass('menu-open');
     toggleIcons();
 }) 
+
+// show time
+setInterval(()=>{
+    var longOptions = { weekday: 'short', year: 'numeric', month: 'short', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric'};
+    var shortOptions = {year: '2-digit', month: 'numeric', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric'};
+    var today  = new Date();
+    $('#date-time-short').text(today.toLocaleDateString("en-US", shortOptions));
+    $('#date-time-long').text(today.toLocaleDateString("en-US", longOptions));
+}, 1000);
+
 });
+

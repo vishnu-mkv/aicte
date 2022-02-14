@@ -25,6 +25,7 @@ html {
     --fs-sm: 0.8rem;
     --nav-height: 8vh;
     --lr-padding: 1.5em;
+    --status-bar-height: 3vh;
 }
 
 html,

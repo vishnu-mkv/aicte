@@ -15,7 +15,7 @@ footer {
     justify-content: center;
 }
 
-.font span {
+.bottom > p {
     font-weight: 500;
 }
 

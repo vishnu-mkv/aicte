@@ -45,6 +45,7 @@ nav {
     padding: 0.75vh var(--lr-padding);
     background-color: var(--grey);
     min-height: var(--nav-height);
+    margin-bottom: 1.75em;
 }
 
 nav img {

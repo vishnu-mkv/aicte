@@ -6,6 +6,7 @@ var logger = require('morgan');
 var livereload = require("livereload");
 var connectLiveReload = require("connect-livereload");
 var fs = require('fs');
+require('dotenv').config();
 
 var indexRouter = require('./routes/index');
 var navData = JSON.parse(fs.readFileSync('./data/nav.json', 'utf8'));

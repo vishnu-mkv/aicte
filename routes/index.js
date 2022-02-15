@@ -9,12 +9,14 @@ const schemesRouter = require('./schemes');
 const educationRouter = require('./education');
 const opportunitiesRouter = require('./opportunities');
 const bulletinsRouter = require('./bulletins');
+const apiRouter = require('./api/api');
 
 router.get('/', function(req, res, next) {
   res.render('index');
 });
 
 router.use('/about', aboutRouter);
+router.use('/api', apiRouter);
 router.use('/news', newsRouter);
 router.use('/bureaus', bureausRouter);
 router.use('/initiatives', initiativesRouter);

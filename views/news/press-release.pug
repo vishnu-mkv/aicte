@@ -1,32 +1,32 @@
 extends ../layouts/layout
 
 block head
-    title News - AICTE
+    title Press Release - AICTE
 
 block css 
     link(rel="stylesheet" href="/stylesheets/news/common.css")
-    link(rel="stylesheet" href="/stylesheets/news/news.css")
+    link(rel="stylesheet" href="/stylesheets/news/press-release.css")
     link(rel="stylesheet" href="/stylesheets/partials/paginate.css")
     link(rel="stylesheet" href="/stylesheets/partials/loader.css")
 
 block content 
-    section#news-news
-        h1.page-title news
+    section#news-press
+        h1.page-title Press release
         .hero
-            img(src="/images/news-news-hero.svg" alt="news-news-hero")
+            img(src="/images/news-news-hero.svg" alt="news-press-hero")
 
         div#scroll-here
-            h2.sub-title.left News
+            h2.sub-title.center Press Release
             div.news-content
                 #content-container
 
-                -var api = '/api/news' // inherited by paginate
+                -var api = '/api/press-release' // inherited by paginate
                 include ../partials/paginate
 
-                -var message = "Fetching news..."
+                -var message = "Fetching press releases..."
                 include ../partials/loader
 
 block scripts 
-    script(src="/javascripts/news-news.js")  
+    script(src="/javascripts/news-press-release.js")  
     script(src="/javascripts/paginate.js" defer) 
     script(src="/javascripts/loader.js" defer) 

@@ -1,0 +1,36 @@
+.news-content {
+    min-height: 20vh;
+    position: relative;
+}
+
+.headline {
+    font-weight: 600;
+    font-size: var(--fs-lg);
+}
+
+.line {
+    width: 7%;
+    min-width: 30px;
+    height: 2px;
+    background-color: var(--orange);
+    border-radius: 2px;
+    margin-top: 0.3em;
+}
+
+.news-bottom {
+    display: flex;
+    place-items: center;
+    gap: 0.5em;
+    font-size: var(--fs-sm);
+    color: var(--light-black);
+}
+
+#content-container {
+    display: grid;
+    gap: 2em;
+}
+
+.news-container {
+    display: grid;
+    gap: 0.8em;
+}

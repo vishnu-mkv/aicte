@@ -5,7 +5,9 @@ html {
     font-family: "Nunito", sans-serif;
 }
 
-* {
+*,
+*::after,
+*::before {
     box-sizing: border-box;
 }
 
@@ -18,14 +20,22 @@ html {
     --grey: #fffff0;
     --milk-white: #fffef7;
     --white: #ffffff;
+    --light-black: #4f4f4f;
+    --gray4: #bdbdbd;
     --fs-xl: 1.4rem;
-    --fs-bg: 1.25rem;
+    --fs-bg: 1.35rem;
     --fs-lg: 1.125rem;
     --fs-md: 1rem;
     --fs-sm: 0.8rem;
-    --nav-height: 8vh;
+    --nav-height: 4rem;
     --lr-padding: 1.5em;
-    --status-bar-height: 3vh;
+    --status-bar-height: 2rem;
+}
+
+@media screen and (max-width: 400px) {
+    :root {
+        --lr-padding: 1em;
+    }
 }
 
 html,
@@ -37,6 +47,7 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    gap: 2em;
 }
 
 #main-content {
@@ -57,12 +68,12 @@ body {
 .page-title {
     text-transform: uppercase;
     font-size: var(--fs-xl);
-    padding: 0.25em 1em 0.25em 0.25em;
+    padding: 0.25em 10% 0.25em 0.25em;
     background-color: var(--orange2);
     color: var(--white);
     font-weight: 500;
     border-bottom: 3px solid var(--black);
-    margin-bottom: 1em;
+    margin-bottom: 2em;
     width: fit-content;
 }
 
@@ -91,12 +102,14 @@ body {
     text-transform: capitalize;
     border-bottom: 3px solid var(--orange);
     width: fit-content;
-    --xtra-len: 2em;
+    --xtra-len: 15%;
+    padding-bottom: 0.3em;
+    margin-bottom: 2em;
 }
 
 /* h2.sub-title.center */
 .sub-title.center {
-    padding: 0 var(--xtra-len);
+    padding-inline: calc(var(--xtra-len) / 2);
     margin-inline: auto;
 }
 
@@ -109,4 +122,28 @@ body {
 .sub-title.right {
     padding-left: var(--xtra-len);
     margin-left: auto;
+}
+
+.hero {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto 3em auto;
+    overflow: hidden;
+    flex-direction: column;
+    gap: 1em;
+    align-items: center;
+}
+
+.hero img {
+    max-width: 1300px;
+    max-height: 60vh;
+    min-height: 350px;
+    object-fit: contain;
+    object-position: center;
+}
+
+.hero p {
+    font-weight: 600;
+    text-align: center;
+    font-style: italic;
 }

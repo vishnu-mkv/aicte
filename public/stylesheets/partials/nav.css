@@ -45,7 +45,6 @@ nav {
     padding: 0.75vh var(--lr-padding);
     background-color: var(--grey);
     min-height: var(--nav-height);
-    margin-bottom: 1.75em;
 }
 
 nav img {
@@ -67,6 +66,7 @@ nav img {
     object-fit: contain;
     height: 6.5vh;
     max-height: 3.1em;
+    min-height: 40px;
 }
 .nav-right {
     display: flex;
@@ -264,6 +264,16 @@ nav img {
     }
 }
 
+@media screen and (max-width: 550px) {
+    .hide-sm {
+        display: none;
+    }
+
+    .hide-lg {
+        display: block;
+    }
+}
+
 @media screen and (max-width: 450px) {
     .nav-right {
         left: 0;
@@ -279,13 +289,5 @@ nav img {
 
     .nav-right {
         align-items: flex-start;
-    }
-
-    .hide-sm {
-        display: none;
-    }
-
-    .hide-lg {
-        display: block;
     }
 }

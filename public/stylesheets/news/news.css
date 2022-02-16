@@ -1,0 +1,15 @@
+@media screen and (min-width: 900px) {
+    #news-news .news-container {
+        max-width: 75%;
+    }
+
+    #news-news .news-container:nth-child(even),
+    #news-news .news-container:nth-child(even) .line {
+        margin-left: auto;
+        text-align: right;
+    }
+
+    #news-news .news-container:nth-child(even) .news-bottom {
+        justify-content: flex-end;
+    }
+}

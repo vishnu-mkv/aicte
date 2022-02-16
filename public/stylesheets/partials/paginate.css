@@ -1,0 +1,50 @@
+#paginator,
+#paginate-numbers,
+.dir-button {
+    display: flex;
+    gap: 1em;
+    flex-wrap: wrap;
+    place-items: center;
+    justify-content: center;
+}
+
+#paginator {
+    margin-block: 2em;
+}
+
+.dir-button {
+    gap: 0.3em;
+    width: fit-content;
+}
+
+.dir-button img {
+    aspect-ratio: 1;
+    width: var(--fs-md);
+}
+
+#paginator p,
+#prev,
+#next {
+    padding: 0.3em 0.6em;
+    background-color: var(--gray4);
+    cursor: pointer;
+}
+
+#paginator p.active {
+    background-color: var(--orange);
+    color: var(--white);
+}
+#prev img {
+    transform: rotateY(180deg);
+}
+
+.dir-button img {
+    filter: invert(1);
+}
+
+#paginator .hide {
+    display: none;
+}
+.no-cursor {
+    cursor: auto !important;
+}

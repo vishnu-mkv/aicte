@@ -124,6 +124,10 @@ body {
     margin-left: auto;
 }
 
+/* 
+div.hero
+    img(src="")
+    p */
 .hero {
     display: flex;
     justify-content: center;

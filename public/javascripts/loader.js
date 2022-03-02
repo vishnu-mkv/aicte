@@ -1,13 +1,12 @@
 $(document).ready(() => {
 
-    const loader = $('#loader');
-
-    $(document).on('showLoader', e => {
-        console.log('show')
+    $(document).on('showLoader', (e, loader) => {
+        console.log("Showing", loader);
         loader.removeClass('hide');
     });
-    $(document).on('hideLoader', e => {
-        console.log('hide')
+    
+    $(document).on('hideLoader', (e, loader) => {
+        console.log("hiding", loader);
         loader.addClass('hide');
     });
 });

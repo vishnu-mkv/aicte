@@ -1,15 +1,10 @@
-.news-content {
-    min-height: 20vh;
-    position: relative;
-}
-
 .headline {
     font-weight: 600;
     font-size: var(--fs-lg);
 }
 
 .line {
-    width: 7%;
+    width: 5%;
     min-width: 30px;
     height: 2px;
     background-color: var(--orange);
@@ -25,7 +20,8 @@
     color: var(--light-black);
 }
 
-#content-container {
+#content-container,
+.content-container {
     display: grid;
     gap: 2em;
 }

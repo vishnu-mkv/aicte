@@ -39,7 +39,7 @@
             {
                 "desc": "News and Press Releases",
                 "name": "Overview",
-                "url": "/news/news-overview"
+                "url": "/news/overview"
             },
             {
                 "desc": "AICTE in the News",
@@ -54,7 +54,7 @@
             {
                 "desc": "Explore glimpses from key events",
                 "name": "Image Gallery",
-                "url": "/news/picture-gallery"
+                "url": "/news/image-gallery"
             },
             {
                 "desc": "Enjoy the videos from the world of AICTE",

@@ -1,0 +1,330 @@
+#main-content > * {
+    position: relative;
+}
+
+#home-carousel {
+    --top-offset: calc(var(--nav-height) + var(--status-bar-height));
+    min-height: calc(100vh - var(--top-offset));
+    display: flex;
+    margin-top: -2em;
+}
+
+#slide-container {
+    display: flex;
+    align-items: stretch;
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+    position: fixed;
+    inset: 0;
+}
+
+.hide-scroller {
+    /* Hide scrollbar for IE, Edge and Firefox */
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.hide-scroller::-webkit-scrollbar {
+    display: none;
+}
+
+.snap-scroll {
+    scroll-snap-type: inline mandatory;
+}
+
+.snap-scroll > * {
+    scroll-snap-align: start;
+}
+
+.carousel-slide {
+    background-image: linear-gradient(
+            to bottom,
+            var(--milk-white),
+            transparent 50%
+        ),
+        var(--src);
+    background-size: cover;
+    background-position: center top;
+    flex: 1 0 100%;
+}
+
+.carousel-text-container {
+    font-family: "Montserrat", sans-serif;
+    display: flex;
+    gap: 2.5em;
+    justify-content: center;
+    place-items: center;
+    margin-top: calc(var(--top-offset) + 4em);
+}
+
+.carousel-text-container > * {
+    flex: 1 0 50%;
+}
+
+.aicte-text {
+    font-size: var(--fs-res);
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: right;
+}
+
+.text-right {
+    position: relative;
+    padding: 0.5em;
+}
+
+.text-right h2 {
+    text-transform: capitalize;
+    font-size: var(--fs-bg);
+    font-weight: 500;
+    margin-bottom: 1em;
+    max-width: 300px;
+    line-height: 1.4em;
+}
+
+.text-right::before {
+    content: "";
+    width: 0.5em;
+    height: 100%;
+    background-color: var(--orange);
+    position: absolute;
+    left: -1.25em;
+    top: 0;
+}
+
+#slide-indicators,
+.arrows {
+    display: flex;
+    position: absolute;
+    left: 0;
+    right: 0;
+}
+
+#slide-indicators {
+    gap: 0.75em;
+    justify-content: center;
+    bottom: 4em;
+}
+
+.arrows {
+    justify-content: space-between;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.arrows > img {
+    padding: 1em 1em 1em 0.75em;
+    background-color: rgba(255, 255, 255, 0.459);
+    cursor: pointer;
+}
+
+.slide-button {
+    width: 1.25em;
+    height: 1.25em;
+    border: 5px solid var(--orange2);
+    border-radius: 50%;
+    background-color: var(--white);
+    cursor: pointer;
+}
+
+#active-slide {
+    background-color: var(--orange2);
+}
+
+#home-about {
+    min-height: 100vh;
+    background-color: var(--blue);
+    display: grid;
+    gap: 4em;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: "quicklinks about announcements";
+    padding-bottom: 1em;
+}
+
+.page-roll {
+    background: var(--white);
+    height: fit-content;
+    padding: 1em;
+    border-radius: 0 0 0.75em 0.75em;
+}
+
+.page-roll > h2 {
+    font-size: var(--fs-lg);
+    font-weight: 600;
+    color: var(--blue);
+}
+
+.page-roll > .roll-link-container {
+    display: grid;
+    margin-block: 1.75em;
+    gap: 1.2em;
+    max-width: 250px;
+}
+
+.roll-link-container > a {
+    padding-bottom: 0.4em;
+    border-bottom: 2px solid var(--orange2);
+    font-weight: 600;
+}
+
+.about-aicte {
+    grid-area: about;
+    align-self: center;
+    color: var(--white);
+    text-align: center;
+    max-width: 450px;
+    justify-self: center;
+}
+
+.about-aicte > a {
+    margin-inline: auto;
+    background-color: var(--yellow);
+    color: var(--black);
+    font-weight: 600;
+}
+
+.about-aicte > p {
+    margin-block: 1.5em;
+}
+
+.about-aicte > h2 {
+    font-weight: 700;
+    font-size: var(--fs-xxl);
+    color: var(--yellow);
+}
+
+.quick-links {
+    grid-area: quicklinks;
+    justify-self: left;
+}
+
+.announcements {
+    grid-area: announcements;
+    justify-self: right;
+}
+
+.slider {
+    display: flex;
+    gap: 1em;
+    overflow-x: scroll;
+}
+
+@media screen and (max-width: 1100px) {
+    #home-about {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 2fr;
+        grid-template-areas:
+            "about about"
+            "quicklinks announcements";
+    }
+
+    .page-roll {
+        border-radius: 0;
+        height: 100%;
+        width: calc(100% + var(--lr-padding) * 2);
+    }
+
+    .announcements {
+        text-align: right;
+        margin-right: calc(var(--lr-padding) * -1);
+        padding-right: var(--lr-padding);
+    }
+
+    .quick-links {
+        margin-left: calc(var(--lr-padding) * -1);
+        padding-left: var(--lr-padding);
+    }
+
+    .announcements > .btn-more {
+        margin-left: auto;
+    }
+
+    .page-roll > .roll-link-container {
+        max-width: 100%;
+    }
+
+    .announcements > .roll-link-container {
+        margin-left: auto;
+    }
+
+    .announcements > .roll-link-container > a {
+        padding-left: 0.75em;
+    }
+
+    .quick-links > .roll-link-container > a {
+        padding-right: 0.75em;
+    }
+}
+
+#other-sections {
+    background: white;
+}
+
+@media screen and (max-width: 700px) {
+    .about-aicte {
+        height: 50vh;
+        display: grid;
+        align-content: center;
+    }
+
+    .carousel-text-container {
+        flex-direction: column;
+        margin-inline: 1em;
+        margin-top: calc(var(--top-offset) + 2em);
+    }
+
+    .text-right {
+        width: 100%;
+        max-width: 500px;
+    }
+
+    .aicte-text,
+    .text-right > h2 {
+        text-align: center;
+    }
+
+    .text-right > h2 {
+        max-width: none;
+    }
+
+    #home-carousel .btn-more {
+        margin-inline: auto;
+    }
+
+    .text-right::before {
+        height: 0.5em;
+        width: 100%;
+        left: 0;
+        top: -1.25em;
+    }
+
+    #home-about {
+        grid-template-columns: 1fr;
+        grid-template-rows: none;
+        grid-template-areas:
+            "about"
+            "quicklinks"
+            "announcements";
+    }
+
+    .announcements {
+        text-align: left;
+    }
+
+    .announcements > .btn-more {
+        margin-left: 0;
+    }
+
+    .page-roll {
+        height: auto;
+        margin-block: calc(var(--lr-padding) * -1);
+        padding-block: var(--lr-padding);
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .text-right > h2 {
+        font-size: var(--fs-lg);
+    }
+}

@@ -12,7 +12,7 @@ mixin generateMenu(menu)
 							strong= link.name
 							small= link.desc
 
-div
+div#nav-cover
 	#status-bar
 		.status-left 
 			p#date-time-long.hide-sm Starting...
@@ -46,7 +46,7 @@ div
 						p#info Information 
 							img(src="/images/dropdown.svg" class="fas fa-caret-down" id="info-down-arrow") 
 
-				ul(class="nav-links" id="extended-nav")
+				ul(class="nav-links" id="extended-nav" data-op="open")
 					each menu in navData.slice(3)
 						+generateMenu(menu) 
 			button.btn-highlight Login

@@ -8,5 +8,10 @@ router.get('/', (req, res) => {
 router.get('/press-releases', (req, res) => {
     res.render('./news/press-release');
 });
+router.get('/events', (req, res) => {
+    res.render('./news/news-events');
+});
+
+
 
 module.exports = router;

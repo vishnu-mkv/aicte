@@ -1,0 +1,23 @@
+[
+    {
+        "image_url": "/images/banners/home-banner-1.png",
+        "summary": "Faciliating Technical Eduaction to promote development", 
+        "title": "aicte",
+        "url": "/about-us/overview",
+        "url_text": "Know More"
+    }, 
+    {
+        "image_url": "/images/banners/ban1_1_0.jpg",
+        "summary": "Approval process 2021 - 2022", 
+        "title": "aicte",
+        "url": "aicte-india.org/ap2022/",
+        "url_text": "Know More"
+    }, 
+    {
+        "image_url": "/images/banners/SLAbanner.png",
+        "summary": "STUDENT LEARNING ASSESSMENT (PARAKH)", 
+        "title": "aicte",
+        "url": "https://parakh.aicte-india.org/",
+        "url_text": "Apply Now"
+    }
+]

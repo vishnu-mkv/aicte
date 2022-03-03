@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&family=Nunito:ital,wght@0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&family=Poppins&display=swap");
 
 html {
-    font-size: 14px;
+    font-size: 16px;
     font-family: "Nunito", sans-serif;
 }
 
@@ -23,11 +23,14 @@ html {
     --white: #ffffff;
     --light-black: #4f4f4f;
     --gray4: #bdbdbd;
+    --paper-white: #f9fbff;
+    --fs-xxl: 1.8rem;
     --fs-xl: 1.4rem;
     --fs-bg: 1.35rem;
     --fs-lg: 1.125rem;
     --fs-md: 1rem;
     --fs-sm: 0.8rem;
+    --fs-res: clamp(var(--fs-lg), calc(5vw + 1rem), 4rem);
     --nav-height: 4rem;
     --lr-padding: 1.5em;
     --status-bar-height: 2rem;
@@ -45,10 +48,11 @@ body {
 }
 
 body {
-    min-height: 100vh;
     display: flex;
     flex-direction: column;
     gap: 2em;
+    width: 100%;
+    min-height: 100vh;
 }
 
 #main-content {
@@ -84,12 +88,13 @@ body {
 .btn-more {
     display: flex;
     gap: 0.4em;
-    padding: 0.2em 0.4em;
+    padding: 0.4em 0.4em;
     background-color: var(--blue);
     border: none;
     border-radius: 0.3em;
     color: white;
     width: fit-content;
+    font-size: var(--fs-md);
 }
 
 .btn-more #readmore {
@@ -135,7 +140,7 @@ div.hero
     margin: 0 auto 3em auto;
     overflow: hidden;
     flex-direction: column;
-    gap: 1em;
+    gap: 0.5em;
     align-items: center;
 }
 
@@ -151,4 +156,57 @@ div.hero
     font-weight: 600;
     text-align: center;
     font-style: italic;
+}
+
+.news-content,
+.media-content {
+    min-height: 20vh;
+    position: relative;
+}
+
+.hide {
+    display: none;
+}
+
+.page-split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2em;
+}
+
+.page-split > * {
+    margin-inline: calc(var(--lr-padding) * -1);
+    padding-block: 2em;
+}
+
+.page-split-right {
+    padding-inline: 3em var(--lr-padding);
+}
+
+.page-split-left {
+    padding-inline: var(--lr-padding) 3em;
+}
+
+@media screen and (max-width: 900px) {
+    .page-split {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .page-split > * {
+        padding-inline: var(--lr-padding);
+    }
+}
+
+.right-arrow {
+    transform: rotateZ(180deg);
+}
+
+.revert-margin {
+    margin-inline: calc(var(--lr-padding) * -1);
+}
+
+.revert-padding {
+    margin-inline: calc(var(--lr-padding) * -1);
+    padding-inline: var(--lr-padding);
 }

@@ -1,0 +1,51 @@
+extends ../layouts/layout
+
+block head
+    title News - AICTE
+
+block css
+    link(rel="stylesheet" href="/stylesheets/news/media.css")
+    link(rel="stylesheet" href="/stylesheets/partials/popup.css")
+    link(rel="stylesheet" href="/stylesheets/partials/paginate.css")
+    link(rel="stylesheet" href="/stylesheets/partials/loader.css")
+    link(rel="stylesheet" href="/stylesheets/news/image-gallery.css")
+
+block content 
+    section#news-media
+        h1.page-title Image gallery
+        .hero
+            img(src="/images/news-images-hero.svg" alt="news-image-hero")
+            p Explore pictures from our key, events, workshops, launches and more
+        div#scroll-here
+            h2.sub-title.left Albums 
+            div.media-content
+                #content-container
+
+                -var api = '/api/image-gallery' // inherited by paginate
+                include ../partials/paginate
+
+                -var message = "Fetching albums..."
+                -var id = "loader-paginate"
+                include ../partials/loader
+
+        #popup-template.hide
+            #popup-content-template.album-viewer
+                h2.sub-title.left.album-title
+                .album-top 
+                    .prev-image-button 
+                        img(src="/images/navigate_before.svg" id="prev-image" alt="previous image")
+                    .media 
+                        img(src="" alt="" class="media-file" id="current-image")
+                    .next-image-button
+                        img(src="/images/navigate_before.svg" id="next-image" alt="next image")
+
+                    -var message = "fetching image..."
+                    -var id = "loader-image"
+                    include ../partials/loader
+                p.album-bottom 
+
+block scripts 
+    script(src="/javascripts/news-image-gallery.js")  
+    script(src="/javascripts/paginate.js" defer) 
+    script(src="/javascripts/loader.js" defer) 
+    script(src="/javascripts/popup.js" defer) 

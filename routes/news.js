@@ -18,11 +18,10 @@ router.get('/overview', (req, res) => {
 router.get('/press-releases', (req, res) => {
     res.render('./news/press-release');
 });
+
 router.get('/events', (req, res) => {
     res.render('./news/news-events');
 });
-
-
 
 router.get('/video', (req, res) => {
     res.render('./news/video');

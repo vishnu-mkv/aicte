@@ -323,7 +323,7 @@
         background-color: var(--primary);
         max-height: none;
         padding-top: 2em;
-        transform: translateX(200vw);
+        transform: translateX(-200vw);
         transition: transform 500ms ease-in-out;
         overflow: hidden;
     }
@@ -331,6 +331,7 @@
     #primary-nav.nav-active {
         transform: translateX(0);
         overflow-y: auto;
+        z-index: 10;
     }
 
     #primary-nav,

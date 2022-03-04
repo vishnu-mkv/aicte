@@ -200,6 +200,37 @@ body {
     padding-block: 0.2em;
 }
 
+#home-news {
+    background-image: linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,.5)), url('/images/news-overview-hero.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.content-container {
+    margin-block: 3em;
+}
+
+.underlink {
+    gap: 0.5em;
+    border-bottom: 1px solid var(--primary);
+    margin: 2em auto;
+    padding: 0;
+    width: fit-content;
+}
+
+#home-news .news-container {
+    border: 2px solid var(--primary);
+}
+
+.underlink img {
+    filter: invert(1);
+}
+
+#news-press {
+    margin-block: 2em;
+}
+
 @media screen and (max-width: 1100px) {
     .carousel-image-container {
         transform: translateX(15%) translateY(-50%);

@@ -5,6 +5,7 @@ require('dotenv').config();
 var Banner = require('./data/models/banner');
 var QuickLink = require('./data/models/quick-links');
 var Announcement = require('./data/models/announcement');
+const { resolve } = require('path');
 
 
 const LoadData = (app) => {
@@ -16,6 +17,8 @@ const LoadData = (app) => {
         app.locals.banners = JSON.parse(fs.readFileSync('./data/banner.json', 'utf8'));
         app.locals.quicklinks = JSON.parse(fs.readFileSync('./data/quick-links.json', 'utf8'));
         app.locals.announcements = JSON.parse(fs.readFileSync('./data/announcements.json', 'utf8'));
+        app.locals.news = JSON.parse(fs.readFileSync('./data/newsroom.json', 'utf8'));
+        app.locals.press = JSON.parse(fs.readFileSync('./data/press-releases.json', 'utf8'));
         resolve();
         
         // Promise.all([QuickLink.find(), Banner.find(), Announcement.find()])
@@ -41,11 +44,12 @@ const connectToDB = (app) => {
             LoadData(app)
             .then( _ => {
                 console.log("Data fetch complete.")
-                resolve();
+                // resolve();
             })
             .catch(err => reject(err));      
         })
         .catch(err => reject(err));
+        resolve();
     })
 };
 

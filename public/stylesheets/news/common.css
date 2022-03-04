@@ -1,6 +1,6 @@
 .headline {
     font-weight: 600;
-    font-size: var(--fs-xl);
+    font-size: var(--fs-lg);
     color: var(--primary);
 }
 
@@ -47,6 +47,6 @@
 
 @media screen and (max-width: 800px) {
     .news-container {
-        flex: 0 0 calc(100% - 3em);
+        flex: 0 0 calc(100%);
     }
 }

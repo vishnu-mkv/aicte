@@ -1,8 +1,5 @@
 extends layouts/layout
 
-block css 
-     link(rel="stylesheet" href="/stylesheets/styles.css")
-
 mixin getBanner(data)
     .carousel-slide
         .carousel-image-container
@@ -28,6 +25,9 @@ mixin getPageRoll(data, title, url, className)
             img(src="/images/readmore.svg" alt="readmore" id="readmore")
 
 block css
+    link(rel="stylesheet" href="/stylesheets/news/common.css")
+    link(rel="stylesheet" href="/stylesheets/news/news.css")
+    link(rel="stylesheet" href="/stylesheets/news/press-release.css")
     link(rel="stylesheet" href="/stylesheets/index.css")
 
 block content
@@ -61,57 +61,38 @@ block content
         +getPageRoll(quicklinks, "Quick Links", "", "quick-links")
         +getPageRoll(announcements, "Announcements", "", "announcements")
 
-     h1.sub-title.center Contact Us
-    <div class="container">
-        <div class="box">
-            <section class="info">
-                <h4>Contact Information</h4>
-                <p>
-                    <img src="/images/phone.svg" alt="phone" color="white">
-                    <p>011-26131576</p>
-                </p>
-                <p>
-                    <img src="/images/mail.svg" alt="email" color="white">
-                    <p>chairman@aicte-india.org</p>
-                </p>
-                <p>
-                    <img src="/images/location.svg" alt="location" color="white">
-                    <p>Vasant Kunj, New Delhi</p>
-                </p>
-            </section>
-            <h3>Contact Form</h3>
-            <form>
-                <div class="firstname">
-                    <label for="firstname">First Name</label>
-                    <br>
-                    <input type="text" id="fname" required>
-                </div>
-                <div class="lastname">
-                    <label for="lastname">last Name</label>
-                    <br>
-                    <input type="text" id="lname" required>
-                </div>
-                <div class="email">
-                    <label for="email">Email</label>
-                    <br>
-                    <input type="email" id="email" required>
-                </div>
-                <div class="mobileno">
-                    <label for="mobileno">Mobile Number</label>
-                    <br>
-                    <input type="mobileno" id="mobileno" required>
-                </div>
-                <div class="message">
-                    <label for="message">Message</label>
-                    <br>
-                    <textarea id="message" ></textarea>
-                </div>
-                <div class="submit">
-                    <input type="submit" value="SEND MESSAGE">
-                </div>
-            </form>
-        </div>
-    </div>
+    #home-news.width-control-700 
+        .sub-title.center News 
+        .content-container 
+            -var i=0
+            while i < 3
+                -var data = news[i++]
+                .news-container
+                    .news-bottom 
+                        .line
+                        span.date= moment(data.date).format('MMMM Do, YYYY')
+                        span.dot &bull;
+                        span.source= data.source
+                    a.headline(href=`${data.url}`)= data.headline
+                    p.content= data.content.indexOf(".") !== -1 ? data.content.substring(0, data.content.indexOf(".")) : data.content
+        a(href='/' class="flex underlink") 
+            span Read More News
+            img(src="/images/Arrow 7.svg" alt="readmore" id="readmore")
+
+    #news-press.width-control-700 
+        .sub-title.center Press Releases 
+        .content-container 
+            -var i=0
+            while i < 3
+                -var data = press[i++]
+                .news-container
+                    .news-bottom 
+                        .line
+                        span.date= moment(data.date).format('MMMM Do, YYYY')
+                    a.headline(href=`${data.url}`)= data.content
+        a(href='/' class="flex underlink") 
+            span See More Press Releases
+            img(src="/images/Arrow 7.svg" alt="readmore" id="readmore")
 
 
 

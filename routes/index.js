@@ -11,6 +11,9 @@ const opportunitiesRouter = require('./opportunities');
 const bulletinsRouter = require('./bulletins');
 const apiRouter = require('./api/api');
 
+const News = require('../data/models/news.js');
+const PressRelease = require('../data/models/press-release.js');
+
 router.use('/about', aboutRouter);
 router.use('/api', apiRouter);
 router.use('/news', newsRouter);

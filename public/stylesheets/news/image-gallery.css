@@ -1,5 +1,6 @@
 #news-media {
     --moveSize: 0.5em;
+    padding-inline: var(--lr-p);
 }
 
 .media-container .media-bottom,

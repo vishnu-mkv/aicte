@@ -13,15 +13,19 @@ const LoadData = (app) => {
         // nav data
         var navData = JSON.parse(fs.readFileSync('./data/nav.json', 'utf8'));
         app.locals.navData = navData;
+        app.locals.banners = JSON.parse(fs.readFileSync('./data/banner.json', 'utf8'));
+        app.locals.quicklinks = JSON.parse(fs.readFileSync('./data/quick-links.json', 'utf8'));
+        app.locals.announcements = JSON.parse(fs.readFileSync('./data/announcements.json', 'utf8'));
+        resolve();
         
-        Promise.all([QuickLink.find(), Banner.find(), Announcement.find()])
-        .then( data => {
-            app.locals.quicklinks = data[0];
-            app.locals.banners = data[1];
-            app.locals.announcements = data[2];
-            resolve();
-        })
-        .catch(err => reject(err));
+        // Promise.all([QuickLink.find(), Banner.find(), Announcement.find()])
+        // .then( data => {
+        //     app.locals.quicklinks = data[0];
+        //     app.locals.banners = data[1];
+        //     app.locals.announcements = data[2];
+        //     resolve();
+        // })
+        // .catch(err => reject(err));
     });
 }
 

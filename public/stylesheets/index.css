@@ -2,11 +2,14 @@
     position: relative;
 }
 
+body {
+    gap: 0;
+}
+
 #home-carousel {
-    --top-offset: calc(var(--nav-height) + var(--status-bar-height));
-    min-height: calc(100vh - var(--top-offset));
+    height: calc(100vh - var(--top-offset));
     display: flex;
-    margin-top: -2em;
+    padding-inline: var(--lr-padding);
 }
 
 #slide-container {
@@ -14,8 +17,13 @@
     align-items: stretch;
     overflow-x: scroll;
     scroll-behavior: smooth;
-    position: fixed;
     inset: 0;
+    background-image: linear-gradient(to bottom, var(--primary), var(--green));
+}
+
+#slide-container > *,
+#slide-container {
+    flex: 1 0 100%;
 }
 
 .hide-scroller {
@@ -38,65 +46,71 @@
 }
 
 .carousel-slide {
-    background-image: linear-gradient(
-            to bottom,
-            var(--milk-white),
-            transparent 50%
-        ),
-        var(--src);
     background-size: cover;
     background-position: center top;
     flex: 1 0 100%;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+
+.carousel-image-container {
+    position: absolute;
+    top: 50%;
+    transform: translateX(20%) translateY(-50%);
+    right: 0;
+    left: 0;
+}
+
+.text-wrapper {
+    padding-inline: var(--lr-p);
+    width: 100%;
 }
 
 .carousel-text-container {
-    font-family: "Montserrat", sans-serif;
-    display: flex;
-    gap: 2.5em;
-    justify-content: center;
-    place-items: center;
-    margin-top: calc(var(--top-offset) + 4em);
-}
-
-.carousel-text-container > * {
-    flex: 1 0 50%;
+    background: white;
+    padding: 2em 1em 2em 3em;
+    position: relative;
+    z-index: 3;
+    margin-inline: 0 auto;
+    max-width: 500px;
+    font-family: "Catamaran", sans-serif;
 }
 
 .aicte-text {
-    font-size: var(--fs-res);
-    font-weight: bold;
+    font-size: 3.6rem;
+    font-weight: 700;
     text-transform: uppercase;
-    text-align: right;
+    /* color: var(--primary); */
+    background-image: linear-gradient(45deg, var(--primary), var(--green));
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    width: fit-content;
 }
 
-.text-right {
-    position: relative;
-    padding: 0.5em;
+.text-right > h2 {
+    margin-block: 1em 1.5em;
 }
 
-.text-right h2 {
-    text-transform: capitalize;
-    font-size: var(--fs-bg);
-    font-weight: 500;
-    margin-bottom: 1em;
-    max-width: 300px;
-    line-height: 1.4em;
+.carousel-text-container .btn-more {
+    background-color: #195760;
+    border-radius: 0;
+    padding: 0.2em 0.4em;
+    font-family: "Open Sans", sans-serif;
 }
 
-.text-right::before {
-    content: "";
-    width: 0.5em;
-    height: 100%;
-    background-color: var(--orange);
-    position: absolute;
-    left: -1.25em;
-    top: 0;
+.carousel-text-container .btn-more #readmore {
+    aspect-ratio: 1;
+    width: 3rem;
 }
 
 #slide-indicators,
 .arrows {
     display: flex;
     position: absolute;
+    z-index: 4;
     left: 0;
     right: 0;
 }
@@ -104,7 +118,11 @@
 #slide-indicators {
     gap: 0.75em;
     justify-content: center;
-    bottom: 4em;
+    bottom: 1em;
+    background: rgba(0, 0, 0, 0.335);
+    width: fit-content;
+    margin: auto;
+    padding: 0.2em;
 }
 
 .arrows {
@@ -120,211 +138,117 @@
 }
 
 .slide-button {
-    width: 1.25em;
-    height: 1.25em;
-    border: 5px solid var(--orange2);
-    border-radius: 50%;
+    width: 2em;
+    height: 3px;
     background-color: var(--white);
     cursor: pointer;
 }
 
-#active-slide {
-    background-color: var(--orange2);
-}
-
-#home-about {
-    min-height: 100vh;
-    background-color: var(--blue);
-    display: grid;
-    gap: 4em;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-areas: "quicklinks about announcements";
-    padding-bottom: 1em;
-}
-
-.page-roll {
-    background: var(--white);
-    height: fit-content;
-    padding: 1em;
-    border-radius: 0 0 0.75em 0.75em;
-}
-
-.page-roll > h2 {
-    font-size: var(--fs-lg);
-    font-weight: 600;
-    color: var(--blue);
-}
-
-.page-roll > .roll-link-container {
-    display: grid;
-    margin-block: 1.75em;
-    gap: 1.2em;
-    max-width: 250px;
-}
-
-.roll-link-container > a {
-    padding-bottom: 0.4em;
-    border-bottom: 2px solid var(--orange2);
-    font-weight: 600;
-}
-
 .about-aicte {
     grid-area: about;
-    align-self: center;
-    color: var(--white);
-    text-align: center;
-    max-width: 450px;
-    justify-self: center;
-}
-
-.about-aicte > a {
-    margin-inline: auto;
-    background-color: var(--yellow);
-    color: var(--black);
-    font-weight: 600;
-}
-
-.about-aicte > p {
-    margin-block: 1.5em;
-}
-
-.about-aicte > h2 {
-    font-weight: 700;
-    font-size: var(--fs-xxl);
-    color: var(--yellow);
 }
 
 .quick-links {
     grid-area: quicklinks;
-    justify-self: left;
 }
 
 .announcements {
     grid-area: announcements;
-    justify-self: right;
 }
 
-.slider {
+#home-about {
+    display: grid;
+    grid-template-areas:
+        "about quicklinks"
+        "announcements quicklinks";
+    gap: 6em;
+}
+
+#home-about h2 {
+    font-family: "Catamaran", sans-serif;
+    font-size: var(--fs-xxl);
+    font-weight: 500;
+    margin-block: 1.3em;
+}
+
+.btn-grp {
+    margin-block: 2em;
     display: flex;
     gap: 1em;
-    overflow-x: scroll;
+    flex-wrap: wrap;
+}
+
+.btn-grp a {
+    background: var(--green);
+    border-radius: 0;
+}
+
+.roll-link-container {
+    display: grid;
+    gap: 0.6em;
+}
+
+.roll-link-container a {
+    color: var(--primary);
+    text-decoration: underline;
+}
+
+.page-roll .btn-more {
+    border-radius: 0;
+    background-color: var(--green);
+    margin-block: 1.3em;
+    padding-block: 0.2em;
 }
 
 @media screen and (max-width: 1100px) {
-    #home-about {
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr 2fr;
-        grid-template-areas:
-            "about about"
-            "quicklinks announcements";
-    }
-
-    .page-roll {
-        border-radius: 0;
-        height: 100%;
-        width: calc(100% + var(--lr-padding) * 2);
-    }
-
-    .announcements {
-        text-align: right;
-        margin-right: calc(var(--lr-padding) * -1);
-        padding-right: var(--lr-padding);
-    }
-
-    .quick-links {
-        margin-left: calc(var(--lr-padding) * -1);
-        padding-left: var(--lr-padding);
-    }
-
-    .announcements > .btn-more {
-        margin-left: auto;
-    }
-
-    .page-roll > .roll-link-container {
-        max-width: 100%;
-    }
-
-    .announcements > .roll-link-container {
-        margin-left: auto;
-    }
-
-    .announcements > .roll-link-container > a {
-        padding-left: 0.75em;
-    }
-
-    .quick-links > .roll-link-container > a {
-        padding-right: 0.75em;
+    .carousel-image-container {
+        transform: translateX(15%) translateY(-50%);
     }
 }
 
-#other-sections {
-    background: white;
-}
+@media screen and (max-width: 900px) {
+    .carousel-image-container {
+        transform: none;
+        inset: 0;
+    }
 
-@media screen and (max-width: 700px) {
-    .about-aicte {
-        height: 50vh;
-        display: grid;
-        align-content: center;
+    .carousel-slide {
+        align-items: flex-end;
+        padding-bottom: 3em;
     }
 
     .carousel-text-container {
-        flex-direction: column;
-        margin-inline: 1em;
-        margin-top: calc(var(--top-offset) + 2em);
+        padding: 1.5em;
+        border: rgba(0, 0, 0, 0.8);
     }
 
-    .text-right {
-        width: 100%;
-        max-width: 500px;
+    #home-carousel {
+        height: calc((100vh - var(--top-offset)));
     }
 
-    .aicte-text,
-    .text-right > h2 {
-        text-align: center;
+    #home-carousel .media-file {
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+        object-fit: cover;
     }
 
-    .text-right > h2 {
-        max-width: none;
+    #home-carousel .media {
+        position: static;
+        height: auto;
+        padding-bottom: 0;
     }
+}
 
-    #home-carousel .btn-more {
-        margin-inline: auto;
-    }
-
-    .text-right::before {
-        height: 0.5em;
-        width: 100%;
-        left: 0;
-        top: -1.25em;
-    }
-
+@media screen and (max-width: 800px) {
     #home-about {
-        grid-template-columns: 1fr;
-        grid-template-rows: none;
         grid-template-areas:
             "about"
             "quicklinks"
             "announcements";
-    }
-
-    .announcements {
-        text-align: left;
-    }
-
-    .announcements > .btn-more {
-        margin-left: 0;
-    }
-
-    .page-roll {
-        height: auto;
-        margin-block: calc(var(--lr-padding) * -1);
-        padding-block: var(--lr-padding);
+        gap: 1em;
     }
 }
 
 @media screen and (max-width: 400px) {
-    .text-right > h2 {
-        font-size: var(--fs-lg);
-    }
 }

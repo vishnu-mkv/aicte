@@ -1,0 +1,37 @@
+#content-container {
+    display: grid;
+    grid-template-columns:1fr 1fr;
+    gap: 2em;
+}
+
+.quote {
+    font-size: var(--fs-lg);
+    font-weight: 600;
+    text-align: right;
+}
+
+#right {
+    display: flex;
+    flex-direction: column;
+    gap:2em;
+}
+
+#bottom {
+    font-size: var(--fs-md);
+    text-align: right;
+    font-weight: 350;
+}
+
+@media screen and (max-width: 500px) {
+    #right {
+        grid-area: right;
+    }
+
+    #left {
+        grid-area: left;
+    }
+
+    #content-container {
+        grid-template-areas: 'right' 'left'; 
+    }
+}

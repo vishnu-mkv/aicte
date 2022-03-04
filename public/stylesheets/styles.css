@@ -7,14 +7,15 @@ html {
 
 *,
 *::after,
-*::before {
+*::before
+{
     box-sizing: border-box;
 }
 
 :root {
-    --orange: #fb710d;
-    --orange2: #ff6a3c;
-    --blue: #0a1045;
+    --primary: #004B76;
+    --green: #007430;
+    --primary2: #062135;
     --yellow: #f9e900;
     --black: #232323;
     --grey: #fffff0;
@@ -69,11 +70,11 @@ body {
     text-transform: uppercase;
     font-size: var(--fs-xl);
     padding: 0.25em 10% 0.25em 0.25em;
-    background-color: var(--orange2);
-    color: var(--white);
+    background-color: var(--white);
+    color: var(--primary2);
     font-weight: 500;
-    border-bottom: 3px solid var(--black);
-    margin-bottom: 2em;
+    border-bottom: 3px solid var(--green);
+    margin-bottom: 1em;
     width: fit-content;
 }
 
@@ -84,7 +85,7 @@ body {
     display: flex;
     gap: 0.4em;
     padding: 0.2em 0.4em;
-    background-color: var(--blue);
+    background-color: var(--primary);
     border: none;
     border-radius: 0.3em;
     color: white;
@@ -100,7 +101,7 @@ body {
     font-size: var(--fs-bg);
     font-weight: 600;
     text-transform: capitalize;
-    border-bottom: 3px solid var(--orange);
+    border-bottom: 3px solid var(--green);
     width: fit-content;
     --xtra-len: 15%;
     padding-bottom: 0.3em;
@@ -134,7 +135,7 @@ div.hero
     margin: 0 auto 3em auto;
     overflow: hidden;
     flex-direction: column;
-    gap: 1em;
+    gap: 0.5em;
     align-items: center;
 }
 
@@ -150,4 +151,19 @@ div.hero
     font-weight: 600;
     text-align: center;
     font-style: italic;
+}
+
+.media {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%;
+}
+
+.media-file {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }

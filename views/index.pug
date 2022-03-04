@@ -1,4 +1,56 @@
 extends layouts/layout
 
+block css 
+     link(rel="stylesheet" href="/stylesheets/styles.css")
 block content
-
+    h1.sub-title.center Contact Us
+    <div class="container">
+        <div class="box">
+            <section class="info">
+                <h4>Contact Information</h4>
+                <p>
+                    <img src="/images/phone.svg" alt="phone" color="white">
+                    <p>011-26131576</p>
+                </p>
+                <p>
+                    <img src="/images/mail.svg" alt="email" color="white">
+                    <p>chairman@aicte-india.org</p>
+                </p>
+                <p>
+                    <img src="/images/location.svg" alt="location" color="white">
+                    <p>Vasant Kunj, New Delhi</p>
+                </p>
+            </section>
+            <h3>Contact Form</h3>
+            <form>
+                <div class="firstname">
+                    <label for="firstname">First Name</label>
+                    <br>
+                    <input type="text" id="fname" required>
+                </div>
+                <div class="lastname">
+                    <label for="lastname">last Name</label>
+                    <br>
+                    <input type="text" id="lname" required>
+                </div>
+                <div class="email">
+                    <label for="email">Email</label>
+                    <br>
+                    <input type="email" id="email" required>
+                </div>
+                <div class="mobileno">
+                    <label for="mobileno">Mobile Number</label>
+                    <br>
+                    <input type="mobileno" id="mobileno" required>
+                </div>
+                <div class="message">
+                    <label for="message">Message</label>
+                    <br>
+                    <textarea id="message" ></textarea>
+                </div>
+                <div class="submit">
+                    <input type="submit" value="SEND MESSAGE">
+                </div>
+            </form>
+        </div>
+    </div>

@@ -1,12 +1,16 @@
-footer {
-    padding: var(--lr-padding);
-    background-color: var(--blue);
-    color: var(--milk-white);
+.footer-wrapper {
+    background-color: var(--primary);
     margin-top: auto;
 }
 
+footer {
+    padding-block: 2em;
+    color: var(--milk-white);
+    z-index: 1;
+}
+
 .font {
-    font-weight: 300;
+    font-weight: 400;
 }
 
 .copy {
@@ -16,12 +20,13 @@ footer {
 }
 
 .bottom > p {
-    font-weight: 500;
+    font-weight: 600;
 }
 
 .bottom p {
     text-align: center;
     margin: 0.3em 0;
+    font-size: var(--fs-md);
 }
 
 .bottom {
@@ -39,14 +44,14 @@ footer {
     font-size: var(--fs-md);
 }
 .top h3 {
-    font-weight: 700;
+    font-weight: 600;
     font-size: var(--fs-lg);
     margin: 0.85em 0;
     color: var(--white);
 }
 
 footer img {
-    width: 1.5em;
+    width: 1.3em;
 }
 
 footer h3,

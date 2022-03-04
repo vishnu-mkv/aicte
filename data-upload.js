@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const Model = require('./data/models/image-gallery');
+const Model = require(process.argv[2]);
 var fs = require('fs');
 require('dotenv').config();
 
@@ -11,8 +11,14 @@ mongoose.connect(uri)
 })
 .catch(err => console.log(err));
 
-var data = JSON.parse(fs.readFileSync('./data/image-gallery.json', 'utf8'));
+var data = JSON.parse(fs.readFileSync(process.argv[3], 'utf8'));
 
+// delete all
+Model.deleteMany({})
+.then(data => console.log(data))
+.catch(err => console.log(err));
+
+// insert all
 Model.insertMany(data)
 .then(data => console.log(data))
 .catch(err => console.log(err));

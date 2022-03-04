@@ -3,6 +3,8 @@
 // that will be inserted into contentContainer
 // createContent() should return html as string
 
+// listen for content-clicked event when clicked on content
+
 $(document).ready(function() {
 
 // there should be a #content-container
@@ -11,8 +13,12 @@ const paginator = $('#paginator');
 const pageNumbersContainer = paginator.find('#paginate-numbers');
 const next = paginator.find('#next');
 const prev = paginator.find('#prev');
+
 // pass api as data-api attribute
 const apiURL = paginator.data('api');
+const pageLoader = $('#loader-paginate')
+
+let currentData = [];
 
 const removeClass = (element, selector) => {
     if(element.hasClass(selector)) element.removeClass(selector);
@@ -47,16 +53,24 @@ const getPageNumbers = (current, limit, total) => {
 
 const getContent = (data) => {
     var template = document.createElement('template');
-    // Never return a text node of whitespace as the result
     template.innerHTML = createContent(data).trim();
     return template.content.firstChild;
 }
 
 const processData = data => {
 
+    currentData = data;
+
     // add docs to container
-    for(let doc of data.docs) {
-        contentContainer.append(getContent(doc));
+    for(let [index, doc] of data.docs.entries()) {
+        let content = $(getContent(doc));
+        content.attr('data-index', index);
+
+        //on click fire content-clicked event
+        content.on('click', {currentData}, e => {
+            contentContainer.trigger('content-clicked', [e.data.currentData.docs[$(e.currentTarget).data('index')]]);
+        });
+        contentContainer.append(content);
     }
 
     // toggle next prev buttons
@@ -93,7 +107,8 @@ const processData = data => {
         });
     } 
 
-    $(document).trigger('hideLoader');
+    console.log(pageLoader);
+    $(document).trigger('hideLoader', [pageLoader]);
 }
 
 const loadOnClick = (button) => {
@@ -106,7 +121,8 @@ const getPage = (pageNumber) => {
 
     contentContainer.empty();
     pageNumbersContainer.empty();
-    $(document).trigger('showLoader');
+
+    $(document).trigger('showLoader', [pageLoader]);
 
     $.ajax({
         url: apiURL+`?page=${pageNumber}`,
@@ -116,5 +132,6 @@ const getPage = (pageNumber) => {
 
 next.on('click', _ => loadOnClick(next));
 prev.on('click', _ => loadOnClick(prev));
+
 getPage(1);
 });

@@ -10,7 +10,7 @@ block css
     link(rel="stylesheet" href="/stylesheets/partials/loader.css")
 
 block content 
-    section#news-news
+    section#news-news.width-control-700
         h1.page-title news
         .hero
             img(src="/images/news-news-hero.svg" alt="news-news-hero")
@@ -24,6 +24,7 @@ block content
                 include ../partials/paginate
 
                 -var message = "Fetching news..."
+                -var id = "loader-paginate"
                 include ../partials/loader
 
 block scripts 

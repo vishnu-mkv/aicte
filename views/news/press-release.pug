@@ -10,13 +10,14 @@ block css
     link(rel="stylesheet" href="/stylesheets/partials/loader.css")
 
 block content 
-    section#news-press
+    section#news-press.width-control-400
         h1.page-title Press release
         .hero
-            img(src="/images/news-news-hero.svg" alt="news-press-hero")
+            img(src="/images/news-press-release.svg" alt="news-press-hero")
+            p Read all the current and latest news releases from AICTE
 
         div#scroll-here
-            h2.sub-title.center Press Release
+            h2.sub-title.left Press Release
             div.news-content
                 #content-container
 
@@ -24,6 +25,7 @@ block content
                 include ../partials/paginate
 
                 -var message = "Fetching press releases..."
+                -var id = "loader-paginate"
                 include ../partials/loader
 
 block scripts 

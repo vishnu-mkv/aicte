@@ -2,8 +2,66 @@ extends layouts/layout
 
 block css 
      link(rel="stylesheet" href="/stylesheets/styles.css")
+
+mixin getBanner(data)
+    .carousel-slide
+        .carousel-image-container
+            .media.carousel-image
+                img.media-file(src=data.image_url)
+        .text-wrapper.width-control-700
+            .carousel-text-container
+                h1.aicte-text= data.title
+                .text-right
+                    h2= data.summary
+                    a(href=`${data.url}` class="btn-more") 
+                        span= data.url_text
+                        img(src="/images/Arrow 7.svg" alt="readmore" id="readmore")
+
+mixin getPageRoll(data, title, url, className)
+    div(class=`page-roll ${className}`)
+        h2= title
+        .roll-link-container
+            each val in data
+                a(href=`${val.url}`)= val.title  
+        a.btn-more(href=`${url}`)
+            span More  
+            img(src="/images/readmore.svg" alt="readmore" id="readmore")
+
+block css
+    link(rel="stylesheet" href="/stylesheets/index.css")
+
 block content
-    h1.sub-title.center Contact Us
+
+    #home-carousel.revert-margin
+        #slide-container.snap-scroll.hide-scroller
+            each banner in banners
+                +getBanner(banner)
+
+        #carousel-controls 
+            .arrows
+                img(src="/images/navigate_before.svg" alt="previous-slide" id="prev-slide")
+                img(src="/images/navigate_before.svg" alt="next-slide" class="right-arrow" id="next-slide")
+            -var n = 0
+            #slide-indicators
+                while n < banners.length
+                    if n == 0
+                        .slide-button#active-slide(data-slideid=n++)
+                    else
+                        .slide-button(data-slideid=n++)
+    #home-about.width-control-700
+        .about-aicte
+            h2 Welcome to AICTE
+            p All India Council for Technical Education (AICTE) was set up in November 1945 as a national-level Apex Advisory Body to conduct a survey on the facilities available for technical education and to promote development in the country in a coordinated and integrated manner.
+
+            .btn-grp
+                a.btn-highlight(href="/about/") About AICTE
+                a.btn-highlight(href="/") PGDM Student Verification
+                a.btn-highlight(href="/") Centralized Support Systems
+
+        +getPageRoll(quicklinks, "Quick Links", "", "quick-links")
+        +getPageRoll(announcements, "Announcements", "", "announcements")
+
+     h1.sub-title.center Contact Us
     <div class="container">
         <div class="box">
             <section class="info">
@@ -54,3 +112,9 @@ block content
             </form>
         </div>
     </div>
+
+
+
+
+block scripts 
+    script(src="/javascripts/index.js")     

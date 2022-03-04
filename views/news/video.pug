@@ -1,0 +1,32 @@
+extends ../layouts/layout
+
+block head
+    title News - AICTE
+
+block css 
+    link(rel="stylesheet" href="/stylesheets/news/media.css")
+    link(rel="stylesheet" href="/stylesheets/partials/paginate.css")
+    link(rel="stylesheet" href="/stylesheets/partials/loader.css")
+
+block content 
+    section#news-media
+        h1.page-title Video gallery
+        .hero
+            img(src="/images/news-video-hero.svg" alt="news-video-hero")
+
+        div#scroll-here
+            h2.sub-title.left Videos 
+            div.media-content
+                #content-container
+
+                -var api = '/api/video-gallery' // inherited by paginate
+                include ../partials/paginate
+
+                -var message = "Fetching videos..."
+                -var id = "loader-paginate"
+                include ../partials/loader
+
+block scripts 
+    script(src="/javascripts/news-video.js")  
+    script(src="/javascripts/paginate.js" defer) 
+    script(src="/javascripts/loader.js" defer) 

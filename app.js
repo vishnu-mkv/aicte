@@ -5,18 +5,17 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var livereload = require("livereload");
 var connectLiveReload = require("connect-livereload");
-var fs = require('fs');
-require('dotenv').config();
 
 var indexRouter = require('./routes/index');
-var navData = JSON.parse(fs.readFileSync('./data/nav.json', 'utf8'));
 
 var app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
-app.locals.navData = navData;
+
+// momentjs
+app.locals.moment = require('moment');
 
 const liveReloadServer = livereload.createServer();
 liveReloadServer.server.once("connection", () => {

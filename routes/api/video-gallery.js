@@ -6,7 +6,7 @@ router.get('/', function(req, res)
 {
     let pageNumber = 1;
     if(req.query.page) pageNumber = req.query.page;
-    VideoGallery.paginate({}, {page: pageNumber, limit: 10, sort: '-updatedAt'})
+    VideoGallery.paginate({}, {page: pageNumber, limit: 9, sort: '-updatedAt'})
     .then(data => res.json(data))
     .catch(err => console.log(err));
 });

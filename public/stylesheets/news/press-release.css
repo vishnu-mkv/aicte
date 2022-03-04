@@ -1,4 +1,23 @@
-.news-container {
-    justify-items: center;
+#news-press #content-container {
+    display: grid;
+    gap: 1em;
+    background-color: rgb(255, 253, 251);
+    padding: 0.5em;
+}
+
+#news-press {
+    padding-inline: var(--lr-p);
+}
+
+#news-press .news-container {
+    grid-template-rows: none;
+    border-bottom: 2px solid rgb(63, 63, 63);
+    padding-inline: 0;
+    background-color: transparent;
+}
+
+#news-press .headline {
+    font-size: var(--fs-lg);
+    color: var(--primary2);
 }
 

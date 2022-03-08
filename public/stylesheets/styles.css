@@ -93,7 +93,7 @@ body {
 
 .btn-more #readmore {
     width: 1rem;
-    aspect-ratio: 1;
+    aspect-ratio:4;
 }
 
 .sub-title {
@@ -124,8 +124,8 @@ body {
     margin-left: auto;
 }
 
-/* 
-div.hero
+
+/* div.hero
     img(src="")
     p */
 .hero {
@@ -135,7 +135,6 @@ div.hero
     overflow: hidden;
     flex-direction: column;
     gap: 1em;
-    align-items: center;
 }
 
 .hero img {
@@ -145,6 +144,7 @@ div.hero
     object-fit: contain;
     object-position: center;
 }
+
 
 .hero p {
     font-weight: 600;

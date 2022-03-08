@@ -18,7 +18,7 @@ body {
   overflow-x: scroll;
   scroll-behavior: smooth;
   inset: 0;
-  background-image: linear-gradient(to bottom, var(--primary), var(--green));
+  background-image: linear-gradient(to bottom, var(--primary), #40BFA9);
 }
 
 #slide-container > *,
@@ -80,13 +80,10 @@ body {
 
 .aicte-text {
   font-size: 3.6rem;
-  font-weight: 700;
+  font-weight: 600;
   text-transform: uppercase;
-  /* color: var(--primary); */
-  background-image: linear-gradient(45deg, var(--primary), var(--green));
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent;
+  color: var(--primary);
+  font-family: "Open Sans", sans-serif;
   width: fit-content;
 }
 
@@ -95,7 +92,7 @@ body {
 }
 
 .carousel-text-container .btn-more {
-  background-color: #195760;
+  background-color: #40BFA9;
   border-radius: 0;
   padding: 0.2em 0.4em;
   font-family: "Open Sans", sans-serif;
@@ -201,20 +198,23 @@ body {
 }
 
 #scholarships {
-    padding-block: 3em;
+    padding: 3em var(--lr-p);
 }
 
 .home-ship-center {
-  width: 40%;
+  width: calc(50% - 2em);
+  padding: 1em 0.5em;
   display: grid;
-  grid-template-rows: 3em auto 7em;
-  place-items: center;
+  grid-template-rows: 3em auto 2em;
+  justify-items: center;
+  background: rgb(252 252 252);
 }
 
 .home-ship-top {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+  gap: 2em;
 }
 .home-ship-head {
   color: var(--primary);
@@ -225,12 +225,13 @@ body {
 .home-ship-desc {
   font-size: var(--fs-md);
   padding-bottom: 25px;
+  text-align: center;
 }
 .home-ship-title {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 0.4em;
+  gap: 1em;
   padding-bottom: 25px;
 }
 
@@ -245,7 +246,6 @@ body {
   color: white;
   width: fit-content;
   font-size: var(--fs-md);
-  margin-bottom: 75px;
 }
 
 #home-news {
@@ -268,7 +268,7 @@ body {
 }
 
 #home-news .news-container {
-    border: 2px solid var(--primary);
+  background-color: rgba(255, 255, 255, 0.9);
 }
 
 .underlink img {

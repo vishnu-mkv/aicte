@@ -25,7 +25,7 @@ html {
     --milk-white: #fffef7;
     --white: #ffffff;
     --light-black: #4f4f4f;
-    --gray4: #bdbdbd;
+    --gray4: #ededed;
     --paper-white: #f9fbff;
     --fs-xxl: 2.4rem;
     --fs-xl: 2.2rem;
@@ -99,8 +99,8 @@ body {
     background-color: var(--primary);
     color: var(--white);
     font-weight: 500;
-    border-bottom: 3px solid var(--green);
-    margin-bottom: 1em;
+    border-bottom: 3px solid var(--black);
+    margin-block: 1em 2em;
     width: fit-content;
     font-family: "Catamaran", sans-serif;
 }
@@ -121,8 +121,13 @@ body {
 }
 
 .btn-more #readmore {
-    width: 1rem;
+    width: 1.1em;
     aspect-ratio: 1;
+}
+
+.calendar {
+    aspect-ratio: 1;
+    width: var(--fs-md);
 }
 
 .sub-title {
@@ -177,7 +182,7 @@ div.hero
 }
 
 .hero p {
-    font-weight: 600;
+    font-weight: 400;
     text-align: center;
     font-style: italic;
 }

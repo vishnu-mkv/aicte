@@ -1,5 +1,5 @@
 .headline {
-    font-weight: 600;
+    font-weight: 500;
     font-size: var(--fs-lg);
     color: var(--primary);
 }
@@ -16,7 +16,7 @@
 .news-bottom {
     display: flex;
     place-items: center;
-    gap: 0.5em;
+    gap: 1em;
     font-size: var(--fs-sm);
     color: var(--light-black);
 }

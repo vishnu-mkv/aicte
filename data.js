@@ -44,12 +44,12 @@ const connectToDB = (app) => {
             LoadData(app)
             .then( _ => {
                 console.log("Data fetch complete.")
-                // resolve();
+                resolve();
             })
             .catch(err => reject(err));      
         })
         .catch(err => reject(err));
-        resolve();
+        // resolve();
     })
 };
 

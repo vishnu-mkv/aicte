@@ -62,6 +62,7 @@
     --max-popup-height: 90%;
     justify-content: space-between;
     --popup-padding: 1em 0.75em;
+    max-height: 100vh;
 }
 
 .album-bottom {

@@ -17,7 +17,10 @@ app.set('view engine', 'pug');
 // momentjs
 app.locals.moment = require('moment');
 
+// live reload browser
 const liveReloadServer = livereload.createServer();
+liveReloadServer.watch(path.join(__dirname, 'public'));
+
 liveReloadServer.server.once("connection", () => {
   setTimeout(() => {
     liveReloadServer.refresh("/");
@@ -25,6 +28,7 @@ liveReloadServer.server.once("connection", () => {
 });
 
 app.use(connectLiveReload());
+
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));

@@ -2,6 +2,142 @@
     {
         "items": [
             {
+                "desc": "Learn how AICTE facilitates education as a basic human right",
+                "name": "Overview",
+                "url": "/education/overview"
+            },
+            {
+                "desc": "Our MoUs with various organizations",
+                "name": "Collaborations (MoUs)",
+                "url": "/education/collaborations"
+            },
+            {
+                "desc": "Emphasizing on training for all round personality development",
+                "name": "Finishing Schools",
+                "url": "/education/finishing-education"
+            },
+            {
+                "desc": "Preparing learners for jobs",
+                "name": "Vocational Education",
+                "url": "/education/vocational-education"
+            },
+            {
+                "desc": "Providing technical and support services to the less fortunate",
+                "name": "Community Colleges",
+                "url": "/education/community-colleges"
+            },
+            {
+                "desc": "Delivering quality education remotely",
+                "name": "Distance Education",
+                "url": "/education/distance-education"
+            },
+            {
+                "desc": "Information on Premier Indian Institutes of National Importance",
+                "name": "Key Institutions",
+                "url": "/education/institutions"
+            },
+            {
+                "desc": "Explore various Best Practices in AICTE Approved Institutes",
+                "name": "Best Practices in Institutes",
+                "url": "https://www.aicte-india.org/flipbook/Best_Practices/"
+            },
+            {
+                "desc": "Leveraging the power of Information & Comm. Technology",
+                "name": "IT & ICT in Education",
+                "url": "/education/IT-and-ICT"
+            },
+            {
+                "desc": "View syllabus for Diploma, UG, PG courses",
+                "name": "Model Syllabus & Sugg. Books (UG Engg.)",
+                "url": "/education/model-syllabus"
+            },
+            {
+                "desc": "Explore Various Library Services Across India",
+                "name": "Library Services",
+                "url": "/education/library-services"
+            },
+            {
+                "desc": "Explore Policies & Reforms in technical education",
+                "name": "Policies & Reforms",
+                "url": "/education/policies-reforms"
+            }
+        ],
+        "title": "Education"
+    },
+    {
+        "items": [
+            {
+                "desc": "News and Press Releases",
+                "name": "Overview",
+                "url": "/news/overview"
+            },
+            {
+                "desc": "AICTE in the News",
+                "name": "News",
+                "url": "/news"
+            },
+            {
+                "desc": "Read our communication to the press",
+                "name": "Press Release",
+                "url": "/news/press-releases"
+            },
+            {
+                "desc": "Explore glimpses from key events",
+                "name": "Image Gallery",
+                "url": "/news/image-gallery"
+            },
+            {
+                "desc": "Enjoy the videos from the world of AICTE",
+                "name": "Video Gallery",
+                "url": "/news/video"
+            },
+            {
+                "desc": "Explore our upcoming events",
+                "name": "Events",
+                "url": "/news/events"
+            }
+        ],
+        "title": "News"
+    },
+    {
+        "items": [
+            {
+                "desc": "An Overview of various schemes",
+                "name": "Overview",
+                "url": "/schemes"
+            },
+            {
+                "desc": "Explore various schemes related to student development",
+                "name": "Student Development Schemes",
+                "url": "/schemes/students-development-schemes"
+            },
+            {
+                "desc": "Information about various Faculty related schemes",
+                "name": "Faculty Development Schemes",
+                "url": "/schemes/staff-development-schemes"
+            },
+            {
+                "desc": "Explore various institutional development schemes",
+                "name": "Institutional Development Schemes",
+                "url": "/schemes/institutional-development-schemes"
+            },
+            {
+                "desc": "Schemes to promote research in technical education",
+                "name": "Research & Innovation Development Schemes",
+                "url": "/schemes/research-innovations-development-schemes"
+            },
+            {
+                "desc": "Schemes to promote co-ordinated development in India",
+                "name": "General Schemes",
+                "url": "/schemes/other-schemes"
+            }
+        ],
+        "title": "Schemes"
+    },
+    
+    {
+        "items": [
+            {
                 "desc": "Read about the apex body of Technical Education in India",
                 "name": "Overview",
                 "url": "/about/overview"
@@ -37,37 +173,102 @@
     {
         "items": [
             {
-                "desc": "News and Press Releases",
+                "desc": "Everything from advertisements to official notices",
                 "name": "Overview",
-                "url": "/news/news-overview"
+                "url": "/bulletins"
             },
             {
-                "desc": "AICTE in the News",
-                "name": "News",
-                "url": "/news"
+                "desc": "See our complete list of advertisements",
+                "name": "Advertisement",
+                "url": "/bulletins/advertisements/"
             },
             {
-                "desc": "Read our communication to the press",
-                "name": "Press Release",
-                "url": "/news/press-releases"
+                "desc": "Read our important circulars",
+                "name": "Circulars",
+                "url": "/bulletins/circulars"
             },
             {
-                "desc": "Explore glimpses from key events",
-                "name": "Image Gallery",
-                "url": "/news/picture-gallery"
+                "desc": "Have complete information on our tenders",
+                "name": "Tenders",
+                "url": "/bulletins/tenders"
             },
             {
-                "desc": "Enjoy the videos from the world of AICTE",
-                "name": "Video Gallery",
-                "url": "/news/video"
+                "desc": "Get updates on our Policies & Activities",
+                "name": "Newsletter",
+                "url": "https://www.aicte-india.org/bulletins/newsletter?lang=All"
             },
             {
-                "desc": "Explore our upcoming events",
-                "name": "Events",
-                "url": "/news/events"
+                "desc": "Know more about our latest activities",
+                "name": "Announcements",
+                "url": "/bulletins/annoucement"
             }
         ],
-        "title": "News"
+        "title": "Bulletins"
+    },
+    {
+        "items": [
+            {
+                "desc": "A statistical information of the institutes in India",
+                "name": "Dashboard",
+                "url": "https://facilities.aicte-india.org/dashboard/pages/dashboardaicte.php"
+            },
+            {
+                "desc": "List of all the approved universities/institutions",
+                "name": "AICTE Approved Universities/Institutions",
+                "url": "https://facilities.aicte-india.org/dashboard/pages/angulardashboard.php#!/approved"
+            },
+            {
+                "desc": "AICTE approved institutions with NRI/PIO-FN-CIWG/TP courses",
+                "name": "NRI/PIO-FN-CIWG/TP/Integrated/Vocational Courses",
+                "url": "https://facilities.aicte-india.org/dashboard/pages/angulardashboard.php#!/nripiofcinstitutes"
+            },
+            {
+                "desc": "Faculty in AICTE approved Engineering & Technology institutes",
+                "name": "Faculty",
+                "url": "https://facilities.aicte-india.org/dashboard/pages/faculties.php"
+            },
+            {
+                "desc": "Graphical representation of the intakes and enrollment",
+                "name": "Graphs & Charts",
+                "url": "https://facilities.aicte-india.org/dashboard/pages/angulardashboard.php#!/graphs"
+            },
+            {
+                "desc": "A comprehensive view on skilling the youth under PMKVY-TI",
+                "name": "PMKVY-TI Dashboard",
+                "url": "https://facilities.aicte-india.org/dashboard_pmkvy/pages/dashboardaicte.php"
+            },
+            {
+                "desc": "List of all the approved institutes under this Yojana",
+                "name": "PMKVY-TI Approved Institutes",
+                "url": "https://facilities.aicte-india.org/dashboard_pmkvy/pages/approvedinstitutes.php"
+            },
+            {
+                "desc": "List of Institutes with NBA Accrediated Courses",
+                "name": "Institutes with Accrediated Courses",
+                "url": "https://facilities.aicte-india.org/dashboard/pages/aicte_nba.php"
+            },
+            {
+                "desc": "Institutions conducting technical programmes without approval",
+                "name": "Unapproved Institutes",
+                "url": "https://facilities.aicte-india.org/dashboard/pages/angulardashboard.php#!/unapproved"
+            },
+            {
+                "desc": "AICTE approved institutions with progressive Closed Courses",
+                "name": "Closed Courses",
+                "url": "https://facilities.aicte-india.org/dashboard/pages/angulardashboard.php#!/closedcourse"
+            },
+            {
+                "desc": "AICTE approved Progressive Closed institutes",
+                "name": "Closed Institutes",
+                "url": "https://facilities.aicte-india.org/dashboard/pages/angulardashboard.php#!/closedinstitute"
+            },
+            {
+                "desc": "List of Institutes with Academic Autonomy",
+                "name": "Institutes with Autonomy",
+                "url": "https://facilities.aicte-india.org/dashboard/pages/aicte_autonomus.php"
+            }
+        ],
+        "title": "Statistics"
     },
     {
         "items": [
@@ -169,106 +370,7 @@
         ],
         "title": "Initiatives"
     },
-    {
-        "items": [
-            {
-                "desc": "An Overview of various schemes",
-                "name": "Overview",
-                "url": "/schemes"
-            },
-            {
-                "desc": "Explore various schemes related to student development",
-                "name": "Student Development Schemes",
-                "url": "/schemes/students-development-schemes"
-            },
-            {
-                "desc": "Information about various Faculty related schemes",
-                "name": "Faculty Development Schemes",
-                "url": "/schemes/staff-development-schemes"
-            },
-            {
-                "desc": "Explore various institutional development schemes",
-                "name": "Institutional Development Schemes",
-                "url": "/schemes/institutional-development-schemes"
-            },
-            {
-                "desc": "Schemes to promote research in technical education",
-                "name": "Research & Innovation Development Schemes",
-                "url": "/schemes/research-innovations-development-schemes"
-            },
-            {
-                "desc": "Schemes to promote co-ordinated development in India",
-                "name": "General Schemes",
-                "url": "/schemes/other-schemes"
-            }
-        ],
-        "title": "Schemes"
-    },
-    {
-        "items": [
-            {
-                "desc": "Learn how AICTE facilitates education as a basic human right",
-                "name": "Overview",
-                "url": "/education/overview"
-            },
-            {
-                "desc": "Our MoUs with various organizations",
-                "name": "Collaborations (MoUs)",
-                "url": "/education/collaborations"
-            },
-            {
-                "desc": "Emphasizing on training for all round personality development",
-                "name": "Finishing Schools",
-                "url": "/education/finishing-education"
-            },
-            {
-                "desc": "Preparing learners for jobs",
-                "name": "Vocational Education",
-                "url": "/education/vocational-education"
-            },
-            {
-                "desc": "Providing technical and support services to the less fortunate",
-                "name": "Community Colleges",
-                "url": "/education/community-colleges"
-            },
-            {
-                "desc": "Delivering quality education remotely",
-                "name": "Distance Education",
-                "url": "/education/distance-education"
-            },
-            {
-                "desc": "Information on Premier Indian Institutes of National Importance",
-                "name": "Key Institutions",
-                "url": "/education/institutions"
-            },
-            {
-                "desc": "Explore various Best Practices in AICTE Approved Institutes",
-                "name": "Best Practices in Institutes",
-                "url": "https://www.aicte-india.org/flipbook/Best_Practices/"
-            },
-            {
-                "desc": "Leveraging the power of Information & Comm. Technology",
-                "name": "IT & ICT in Education",
-                "url": "/education/IT-and-ICT"
-            },
-            {
-                "desc": "View syllabus for Diploma, UG, PG courses",
-                "name": "Model Syllabus & Sugg. Books (UG Engg.)",
-                "url": "/education/model-syllabus"
-            },
-            {
-                "desc": "Explore Various Library Services Across India",
-                "name": "Library Services",
-                "url": "/education/library-services"
-            },
-            {
-                "desc": "Explore Policies & Reforms in technical education",
-                "name": "Policies & Reforms",
-                "url": "/education/policies-reforms"
-            }
-        ],
-        "title": "Education"
-    },
+
     {
         "items": [
             {
@@ -288,105 +390,5 @@
             }
         ],
         "title": "Opportunities"
-    },
-    {
-        "items": [
-            {
-                "desc": "A statistical information of the institutes in India",
-                "name": "Dashboard",
-                "url": "https://facilities.aicte-india.org/dashboard/pages/dashboardaicte.php"
-            },
-            {
-                "desc": "List of all the approved universities/institutions",
-                "name": "AICTE Approved Universities/Institutions",
-                "url": "https://facilities.aicte-india.org/dashboard/pages/angulardashboard.php#!/approved"
-            },
-            {
-                "desc": "AICTE approved institutions with NRI/PIO-FN-CIWG/TP courses",
-                "name": "NRI/PIO-FN-CIWG/TP/Integrated/Vocational Courses",
-                "url": "https://facilities.aicte-india.org/dashboard/pages/angulardashboard.php#!/nripiofcinstitutes"
-            },
-            {
-                "desc": "Faculty in AICTE approved Engineering & Technology institutes",
-                "name": "Faculty",
-                "url": "https://facilities.aicte-india.org/dashboard/pages/faculties.php"
-            },
-            {
-                "desc": "Graphical representation of the intakes and enrollment",
-                "name": "Graphs & Charts",
-                "url": "https://facilities.aicte-india.org/dashboard/pages/angulardashboard.php#!/graphs"
-            },
-            {
-                "desc": "A comprehensive view on skilling the youth under PMKVY-TI",
-                "name": "PMKVY-TI Dashboard",
-                "url": "https://facilities.aicte-india.org/dashboard_pmkvy/pages/dashboardaicte.php"
-            },
-            {
-                "desc": "List of all the approved institutes under this Yojana",
-                "name": "PMKVY-TI Approved Institutes",
-                "url": "https://facilities.aicte-india.org/dashboard_pmkvy/pages/approvedinstitutes.php"
-            },
-            {
-                "desc": "List of Institutes with NBA Accrediated Courses",
-                "name": "Institutes with Accrediated Courses",
-                "url": "https://facilities.aicte-india.org/dashboard/pages/aicte_nba.php"
-            },
-            {
-                "desc": "Institutions conducting technical programmes without approval",
-                "name": "Unapproved Institutes",
-                "url": "https://facilities.aicte-india.org/dashboard/pages/angulardashboard.php#!/unapproved"
-            },
-            {
-                "desc": "AICTE approved institutions with progressive Closed Courses",
-                "name": "Closed Courses",
-                "url": "https://facilities.aicte-india.org/dashboard/pages/angulardashboard.php#!/closedcourse"
-            },
-            {
-                "desc": "AICTE approved Progressive Closed institutes",
-                "name": "Closed Institutes",
-                "url": "https://facilities.aicte-india.org/dashboard/pages/angulardashboard.php#!/closedinstitute"
-            },
-            {
-                "desc": "List of Institutes with Academic Autonomy",
-                "name": "Institutes with Autonomy",
-                "url": "https://facilities.aicte-india.org/dashboard/pages/aicte_autonomus.php"
-            }
-        ],
-        "title": "Statistics"
-    },
-    {
-        "items": [
-            {
-                "desc": "Everything from advertisements to official notices",
-                "name": "Overview",
-                "url": "/bulletins"
-            },
-            {
-                "desc": "See our complete list of advertisements",
-                "name": "Advertisement",
-                "url": "/bulletins/advertisements/"
-            },
-            {
-                "desc": "Read our important circulars",
-                "name": "Circulars",
-                "url": "/bulletins/circulars"
-            },
-            {
-                "desc": "Have complete information on our tenders",
-                "name": "Tenders",
-                "url": "/bulletins/tenders"
-            },
-            {
-                "desc": "Get updates on our Policies & Activities",
-                "name": "Newsletter",
-                "url": "https://www.aicte-india.org/bulletins/newsletter?lang=All"
-            },
-            {
-                "desc": "Know more about our latest activities",
-                "name": "Announcements",
-                "url": "/bulletins/annoucement"
-            }
-        ],
-        "title": "Bulletins"
     }
 ]

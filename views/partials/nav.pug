@@ -1,53 +1,64 @@
-mixin generateMenu(menu)
-	li.nav-link
-		p.nav-link-title= menu.title
-		.submenu.slide-menu
-			.header
-				img(src="/images/navigate_before.svg" class="fas fa-arrow-left")
-				span= menu.title
-			.link-grid
-				each link in menu.items
-					.sub-link
-						a(href=link.url)
-							strong= link.name
-							small= link.desc
+mixin generateSubMenu(data)
+	.submenu.width-control-700(class= data.items.length <= 6 ? "x6" : "x12" id="menu-"+data.title)
+		.submenu-left.flex 
+			img.hide-lg.nav-back(src="/images/navigate_before.svg" alt="")
+			h2= data.title
+		.submenu-right
+			each item in data.items
+				a(href=item.url)= item.name  
 
-div
-	#status-bar
-		.status-left 
-			p#date-time-long.hide-sm Starting...
-			p#date-time-short.hide-lg Starting...
-		.status-right
-			div.font-size
-				span.hide-sm Text size 
-				.font-change-buttons 
-					span#font-decrease A-
-					span#font-normal A
-					span#font-increase A+
-			div.screen-reader
-				span.hide-sm Screen Reader Access
-				img(src="/images/screen-reader.svg" alt="screen-reader")
+mixin generateMenu(data, hide)
+	.submenu-container(tabindex=0, class=hide?"hide-lg":"")
+		.menu-head.flex 
+			span= data.title 
+			img(src="/images/downarrow.svg" alt="")
+		.submenu-wrapper
+			+generateSubMenu(data)
 
 
-	nav
-		.nav-left
-			a(href='/')
-				img(src="/images/aicte-logo.png" alt="aicte-logo" id='aicte-logo')
-			.menu-icon-container
-				img(src="/images/menu-icon.svg" class="fas fa-bars" id='menu-icon')
-				img(src="/images/close-icon.svg" class="fas fa-times hide" id='close-icon')
 
-		.nav-right 
-			.link-container
-				.nav-links#main-nav 
-					each menu in navData.slice(0, 3)
-						+generateMenu(menu)
-					li#extended-nav-cover
-						p#info Information 
-							img(src="/images/dropdown.svg" class="fas fa-caret-down" id="info-down-arrow") 
+#nav-container
+	#status-wrapper.w-wrapper
+		#status.flex.width-control-700
+			.action.flex 
+				span.hide-sm Light Mode
+				img(src="/images/light-mode.svg" alt="")
+			.action.flex
+				span.hide-sm Text size
+				div.font-grp.flex
+					span#f-decrease A-
+					span#f-normal A 
+					span#f-increase A+
+			.action.flex 
+				span.hide-sm Screen Reader Access 
+				img(src="/images/screen-reader.svg" alt="")
+	#header-wrapper.w-wrapper
+		#header.flex.width-control-700
+			#m-icons.hide-lg 
+				img#menu-icon.hide-lg(src="/images/menu-icon.svg" alt="") 
+				img#close-icon.hide(src="/images/close-icon.svg" alt="") 
+			#nav-left.flex 
+				img#aicte-logo.hide-sm(src="/images/aicte-logo.png" alt="")
+				a.hide-sm(href="/")  ALL INDIA COUNCIL OF TECHNICAL EDUCATION
+				a.hide-lg(href="/") AICTE
+			#nav-right
+				img(src="/images/search.svg" alt="")
+	#nav-wrapper.w-wrapper
+		nav#primary-nav.flex.width-control-700
+			a#home(href="/") Home
+			-var i = 0 
+			while i < 4
+				+generateMenu(navData[i++])
+			while i < navData.length
+				+generateMenu(navData[i++], true)
 
-				ul(class="nav-links" id="extended-nav")
-					each menu in navData.slice(3)
-						+generateMenu(menu) 
-			button.btn-highlight Login
+			-i = 4
+			.submenu-container#info-menu.hide-sm(tabindex=0) 
+				.menu-head.flex 
+					span Information 
+					img(src="/images/downarrow.svg" alt="")
+				#info-wrapper.submenu-wrapper
+					#info-menu-scroller.width-control-700
+						while i < navData.length
+							+generateSubMenu(navData[i++]) 
 

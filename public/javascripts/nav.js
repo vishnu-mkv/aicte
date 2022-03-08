@@ -1,61 +1,47 @@
 $(document).ready(function () {
 
-let currentOpenMenu = null;
-
-// open/close extended menu
-$('#extended-nav-cover').on('click', function(){
-    $('#extended-nav').toggleClass('extended-nav-open');
-    $('.fa-caret-down').toggleClass('rotate');
-});
-
-
-// open secondary menu
-$('.nav-link-title').each(function() {
+    let currentOpenMenu = null;
+    let primaryNav = $('#primary-nav');
+    let menuIcon = $('#menu-icon');
+    let closeIcon = $('#close-icon');
     
-    let title = $(this);
-    title.on('click', function(){
-        // close if any open menus
-        currentOpenMenu?.removeClass('slide-open');
-        currentOpenMenu = title.parent().find('.slide-menu');
-        currentOpenMenu.addClass('slide-open'); 
+    menuIcon.on('click', () => {
+        closeIcon.removeClass('hide');
+        menuIcon.addClass('hide');
+        primaryNav.addClass('nav-active');
+        document.body.style.position = 'fixed';
     });
-});
-
-// close secondary menu
-$('.fa-arrow-left').each(function() {
     
-    let back = $(this);
-    back.on('click', function(){
-        back.parent().parent().removeClass('slide-open');
+    closeIcon.on('click', () => {
+        closeIcon.addClass('hide');
+        menuIcon.removeClass('hide');
+        primaryNav.removeClass('nav-active');
+        document.body.style.position = '';
     });
-});
 
-// change menu icon
-let toggleIcons = () => {
-    $('#menu-icon').toggleClass('hide');
-    $('#close-icon').toggleClass('hide');
-}
+    $('.menu-head').on('click', (e) => {
 
-// open menu on mobile
-$('#menu-icon').on('click', () => {
-    $('.nav-right').addClass('menu-open');
-    toggleIcons();
-}) 
+        let oldMenu = currentOpenMenu;
+        
+        if($(e.target).parent().hasClass('submenu-container')){
+            currentOpenMenu = $(e.target).parent();
+        }else currentOpenMenu = $(e.target).parent().parent();
+        
+        if(currentOpenMenu.hasClass('submenu-active')) {
+            currentOpenMenu?.removeClass('submenu-active');
+            document.body.style.position = '';
+            return;
+        }
 
-// close menu on mobile
-$('#close-icon').on('click', () => {
-    $('.nav-right').removeClass('menu-open');
-    toggleIcons();
-}) 
+        oldMenu?.removeClass('submenu-active');
+        currentOpenMenu?.addClass('submenu-active');
+        document.body.style.position = 'fixed';
+    });
 
-// show time
-setInterval(()=>{
-    var longOptions = { weekday: 'short', year: 'numeric', month: 'short', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric'};
-    var shortOptions = {year: '2-digit', month: 'numeric', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric'};
-    var today  = new Date();
-    $('#date-time-short').text(today.toLocaleDateString("en-US", shortOptions));
-    $('#date-time-long').text(today.toLocaleDateString("en-US", longOptions));
-}, 1000);
+    $('.nav-back').on('click', () => {
+        currentOpenMenu.removeClass('submenu-active');
+        currentOpenMenu = null;
+    })
 
 });
 

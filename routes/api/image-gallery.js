@@ -6,7 +6,8 @@ router.get('/', function(req, res)
 {
     let pageNumber = 1;
     if(req.query.page) pageNumber = req.query.page;
-    ImageGallery.paginate({}, {page: pageNumber, limit: 10, sort: '-updatedAt'})
+    
+    ImageGallery.paginate({}, {page: pageNumber, limit: 10, sort: '-date'})
     .then(data => res.json(data))
     .catch(err => console.log(err));
 });

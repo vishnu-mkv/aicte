@@ -2,7 +2,7 @@ const createContent = (data) => {
     return  `
     <div class="news-container"> 
         <div class="news-bottom">
-            <div class="line"></div>
+            <img class="calender" src="/images/calender.svg">
             <span class="date">${moment(data.date).format('MMMM Do, YYYY')}</span>
         </div>
         <a class="headline" href=${data.url}>${data.content}</a>

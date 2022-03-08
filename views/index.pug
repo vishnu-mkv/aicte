@@ -25,6 +25,7 @@ mixin getPageRoll(data, title, url, className)
             img(src="/images/readmore.svg" alt="readmore" id="readmore")
 
 block css
+
     link(rel="stylesheet" href="/stylesheets/news/common.css")
     link(rel="stylesheet" href="/stylesheets/news/news.css")
     link(rel="stylesheet" href="/stylesheets/news/press-release.css")
@@ -69,7 +70,7 @@ block content
                 -var data = news[i++]
                 .news-container
                     .news-bottom 
-                        .line
+                        img(src="/images/calender.svg", class="calendar" alt="")
                         span.date= moment(data.date).format('MMMM Do, YYYY')
                         span.dot &bull;
                         span.source= data.source
@@ -87,7 +88,7 @@ block content
                 -var data = press[i++]
                 .news-container
                     .news-bottom 
-                        .line
+                        img(src="/images/calender.svg", class="calendar" alt="")
                         span.date= moment(data.date).format('MMMM Do, YYYY')
                     a.headline(href=`${data.url}`)= data.content
         a(href='/' class="flex underlink") 

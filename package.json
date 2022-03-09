@@ -24,5 +24,8 @@
     "connect-livereload": "^0.6.1",
     "livereload": "^0.9.3",
     "loadtest": "^5.2.0"
+  },
+  "engines": {
+    "node": "16.x"
   }
 }

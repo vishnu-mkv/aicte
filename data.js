@@ -5,6 +5,8 @@ require('dotenv').config();
 var Banner = require('./data/models/banner');
 var QuickLink = require('./data/models/quick-links');
 var Announcement = require('./data/models/announcement');
+var News = require('./data/models/news');
+var PressRelease = require('./data/models/press-release');
 const { resolve } = require('path');
 
 
@@ -14,21 +16,23 @@ const LoadData = (app) => {
         // nav data
         var navData = JSON.parse(fs.readFileSync('./data/nav.json', 'utf8'));
         app.locals.navData = navData;
-        app.locals.banners = JSON.parse(fs.readFileSync('./data/banner.json', 'utf8'));
-        app.locals.quicklinks = JSON.parse(fs.readFileSync('./data/quick-links.json', 'utf8'));
-        app.locals.announcements = JSON.parse(fs.readFileSync('./data/announcements.json', 'utf8'));
-        app.locals.news = JSON.parse(fs.readFileSync('./data/newsroom.json', 'utf8'));
-        app.locals.press = JSON.parse(fs.readFileSync('./data/press-releases.json', 'utf8'));
-        resolve();
+        // app.locals.banners = JSON.parse(fs.readFileSync('./data/banner.json', 'utf8'));
+        // app.locals.quicklinks = JSON.parse(fs.readFileSync('./data/quick-links.json', 'utf8'));
+        // app.locals.announcements = JSON.parse(fs.readFileSync('./data/announcements.json', 'utf8'));
+        // app.locals.news = JSON.parse(fs.readFileSync('./data/newsroom.json', 'utf8'));
+        // app.locals.press = JSON.parse(fs.readFileSync('./data/press-releases.json', 'utf8'));
+        // resolve();
         
-        // Promise.all([QuickLink.find(), Banner.find(), Announcement.find()])
-        // .then( data => {
-        //     app.locals.quicklinks = data[0];
-        //     app.locals.banners = data[1];
-        //     app.locals.announcements = data[2];
-        //     resolve();
-        // })
-        // .catch(err => reject(err));
+        Promise.all([QuickLink.find(), Banner.find(), Announcement.find(), News.find(), PressRelease.find()])
+        .then( data => {
+            app.locals.quicklinks = data[0];
+            app.locals.banners = data[1];
+            app.locals.announcements = data[2];
+            app.locals.news = data[3];
+            app.locals.press = data[4];
+            resolve();
+        })
+        .catch(err => reject(err));
     });
 }
 

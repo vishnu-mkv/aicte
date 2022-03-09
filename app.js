@@ -3,8 +3,7 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-var livereload = require("livereload");
-var connectLiveReload = require("connect-livereload");
+
 
 var indexRouter = require('./routes/index');
 
@@ -17,17 +16,24 @@ app.set('view engine', 'pug');
 // momentjs
 app.locals.moment = require('moment');
 
-// live reload browser
-const liveReloadServer = livereload.createServer();
-liveReloadServer.watch(path.join(__dirname, 'public'));
+if(process.env.NODE_ENV !== "production") {
 
-liveReloadServer.server.once("connection", () => {
-  setTimeout(() => {
-    liveReloadServer.refresh("/");
-  }, 1000);
-});
+  var livereload = require("livereload");
+  var connectLiveReload = require("connect-livereload");
+  
+  // live reload browser
+  const liveReloadServer = livereload.createServer();
+  liveReloadServer.watch(path.join(__dirname, 'public'));
+  
+  liveReloadServer.server.once("connection", () => {
+    setTimeout(() => {
+      liveReloadServer.refresh("/");
+    }, 1000);
+  });
+  
+  app.use(connectLiveReload());
 
-app.use(connectLiveReload());
+}
 
 app.use(logger('dev'));
 app.use(express.json());
@@ -47,7 +53,7 @@ app.use(function(req, res, next) {
 app.use(function(err, req, res, next) {
   // set locals, only providing error in development
   res.locals.message = err.message;
-  res.locals.error = req.app.get('env') === 'development' ? err : {};
+  res.locals.error = process.env.NODE_ENV !== 'production' ? err : {};
 
   // render the error page
   res.status(err.status || 500);

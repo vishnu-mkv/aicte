@@ -13,6 +13,12 @@ footer {
     font-weight: 400;
 }
 
+.flex-b {
+    display: flex;
+    place-items: center;
+    gap: 0.6em;
+}
+
 .copy {
     display: flex;
     gap: 0.5em;

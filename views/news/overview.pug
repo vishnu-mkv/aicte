@@ -15,36 +15,34 @@ block content
             img(src="/images/news-overview-hero.svg" alt="news overview")
             p Read the latest news and press releases
 
-        .page-split
-            .page-split-left 
-                h2.sub-title.left In the News
-                .content-container 
-                    each data in news
-                        .news-container
-                            a.headline(href=data.url)= data.headline
-                            p.content= data.content
-                            .news-bottom
-                                span.date= moment(data.date).format("MMMM Do, YYYY") 
-                                span.dot  &bull; 
-                                span.source= data.source 
-                            .line 
-                a.btn-more#more-news(href="/news/")
-                    span All News
-                    img(src="/images/readmore.svg" alt="readmore" id="readmore")
+        .news-overview
+            h2.sub-title.left In the News
+            .content-container 
+                each data in news
+                    .news-container
+                        .news-bottom 
+                            img(src="/images/calender.svg", class="calendar" alt="")
+                            span.date= moment(data.date).format('MMMM Do, YYYY')
+                            span.dot &bull;
+                            span.source= data.source
+                        a.headline(href=`${data.url}`)= data.headline
+                        p.content= data.content.indexOf(".") !== -1 ? data.content.substring(0, data.content.indexOf(".")) : data.content
+            a(href='/' class="flex underlink") 
+                span Read More News
+                img(src="/images/Arrow 7.svg" alt="readmore" id="readmore")
 
-            .page-split-right
-                h2.sub-title.right Press Releases
-                h2.sub-title.left.hide Press Releases
-                .content-container
-                    each data in press
-                        .news-container
-                            a.headline(href=data.url) #{data.content}
-                            .news-bottom
-                                span.date= moment(data.date).format("MMMM Do, YYYY")
-                            .line
-                a.btn-more#more-press(href="/news/press-releases")
-                    span Read More
-                    img(src="/images/readmore.svg" alt="readmore" id="readmore")
+        .press-overview
+            h2.sub-title.left Press Releases
+            .content-container
+                each data in press
+                    .news-container
+                        .news-bottom 
+                            img(src="/images/calender.svg", class="calendar" alt="")
+                            span.date= moment(data.date).format('MMMM Do, YYYY')
+                        a.headline(href=`${data.url}`)= data.content
+            a(href='/' class="flex underlink") 
+                span See More Press Releases
+                img(src="/images/Arrow 7.svg" alt="readmore" id="readmore")
 
     #media-contact-section
         h1.sub-title.center Media Conatct

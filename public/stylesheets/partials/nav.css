@@ -16,6 +16,10 @@
     font-size: var(--fs-sm);
 }
 
+.hindi {
+    font-family: 'Hind', sans-serif;
+}
+
 #status img {
     height: var(--fs-sm);
     aspect-ratio: 1;
@@ -60,12 +64,39 @@
 #aicte-logo {
     width: 4.2em;
     aspect-ratio: 1;
-    transform: translateY(-30%);
+    transform: translateY(-20%);
 }
 
 #nav-left a {
     color: var(--black);
     font-weight: 600;
+    font-family: 'Catamaran', sans-serif;
+    letter-spacing: 0.5px;
+    line-height: 1.5em;
+}
+
+#nav-left {
+    height: var(--nav-height);
+}
+
+.logo {
+    display: flex;
+    flex-direction: column;
+    font-size: 1.25rem;
+    position: relative;
+    color: #272727;
+}
+
+.logo::after {
+    content: '';
+    background-color: var(--black);
+    position: absolute;
+    height: 1.3px;
+    width: 100%;
+    left: 0;
+    right: 0;
+    top: calc(44%);
+    transform: translateY(50%);
 }
 
 #nav-wrapper {

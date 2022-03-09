@@ -22,7 +22,7 @@
 
 .media-container p {
     text-align: center;
-    font-weight: 600;
+    font-weight: 500;
     max-height: var(--title-height);
     overflow: hidden;
 }

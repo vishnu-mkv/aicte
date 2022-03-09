@@ -429,7 +429,7 @@ body {
     }
     .home-form-inputtop {
         display: flex;
-        gap: 50px;
+        gap: 1.4em;
         flex-wrap: wrap;
     }
 

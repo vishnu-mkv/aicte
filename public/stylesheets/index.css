@@ -39,6 +39,7 @@ body {
 
 .snap-scroll {
     scroll-snap-type: inline mandatory;
+    overflow-x: scroll;
 }
 
 .snap-scroll > * {
@@ -281,62 +282,22 @@ body {
     font-size: var(--fs-lg);
 }
 
-@media screen and (max-width: 1100px) {
-    .carousel-image-container {
-        transform: translateX(15%) translateY(-50%);
-    }
-}
-
-@media screen and (max-width: 900px) {
-    .carousel-image-container {
-        transform: none;
-        inset: 0;
-    }
-
-    .contact-form-div {
-        padding-inline: var(--lr-p);
-    }
-
-    .carousel-slide {
-        align-items: flex-end;
-        padding-bottom: 3em;
-    }
-
-    .carousel-text-container {
-        padding: 1.5em;
-        border: rgba(0, 0, 0, 0.8);
-    }
-
-    #home-carousel {
-        height: calc((100vh - var(--top-offset)));
-    }
-
-    #home-carousel .media-file {
-        top: 50%;
-        left: 50%;
-        transform: translateX(-50%) translateY(-50%);
-        object-fit: cover;
-    }
-
-    #home-carousel .media {
-        position: static;
-        height: auto;
-        padding-bottom: 0;
-    }
-    .home-ship-center {
-        width: 100%;
-    }
-}
-
 .home-form-inputtop {
     display: flex;
-    gap: 5em;
+    gap: 2em;
     flex-wrap: wrap;
+    justify-content: space-between;
 }
+
+.home-form-inputtop > * {
+    width: calc(50% - 1em);
+    max-width: 350px;
+}
+
 .home-form-input {
     background-color: #f3f3f3;
-    width: 220px;
-    height: 45%;
+    width: 100%;
+    height: 50%;
     border: none;
     margin-top: 1em;
     border-radius: 5px;
@@ -376,7 +337,6 @@ body {
 }
 .home-contact-left-head {
     display: flex;
-    gap: 1em;
     flex-wrap: wrap;
     justify-content: center;
     padding-inline: 0;
@@ -393,11 +353,15 @@ body {
 }
 .home-contact-left-div {
     background-color: var(--primary);
-    width: 39%;
-    height: 630px;
-    padding-left: 45px;
+    width: 30%;
+    padding-left: 2em;
     padding-bottom: 40px;
     color: white;
+}
+
+.contact-form-div {
+    width: 70%;
+    padding-inline: 2.5em;
 }
 
 .home-contact-left-set {
@@ -414,7 +378,209 @@ body {
 .special-image {
     padding-left: 2.5px;
 }
+
+#home-stats .stats,
+.stat-container {
+    display: grid;
+    place-items: center;
+    gap: 1em;
+}
+
+#home-stats {
+    padding: 1.5em var(--lr-p);
+}
+
+#home-stats .stats {
+    grid-template-columns: repeat(4, 1fr);
+    text-align: center;
+    gap: 1.5em;
+    margin-block: 4em 2em;
+    max-width: 800px;
+    margin-inline: auto;
+}
+
+.stat-container {
+    border-bottom: 2px solid var(--primary);
+}
+
+.big-stat {
+    font-size: var(--fs-lg);
+    font-weight: bold;
+}
+
+.stat-what {
+    color: var(--primary);
+}
+
+.year {
+    margin-block: 2em 3em;
+    text-align: center;
+    font-weight: 600;
+}
+
+#subscribe-cover {
+    background-color: var(--primary);
+    display: grid;
+    place-items: center;
+    padding: 2em var(--lr-p);
+    min-height: 15em;
+    text-align: center;
+}
+
+#sub-container {
+    background-color: var(--white);
+    padding: 2em 1em;
+    width: 100%;
+    max-width: 800px;
+}
+
+#sub-container h2 {
+    font-size: var(--fs-xxl);
+    font-weight: 700;
+    color: var(--primary);
+    font-family: "Catamaran", sans-serif;
+}
+
+#sub-form {
+    height: 3em;
+    width: 90%;
+    display: flex;
+    margin: 2em auto;
+}
+
+#sub-form > * {
+    height: 100%;
+}
+
+#sub-form input {
+    flex: 1 0 auto;
+    padding: 0.5em;
+    outline-offset: -2px;
+    outline: 2px solid var(--black);
+}
+
+#sub-container button {
+    background-color: var(--primary);
+    color: var(--white);
+    border: none;
+    padding: 0.5em;
+}
+
+.btn-grps-social {
+    display: flex;
+    gap: 1em 2em;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-block: 3em 1em;
+}
+
+#bureaus {
+    margin-block: 2em;
+}
+
+#b-scroller {
+    gap: 1.5em;
+    padding-right: var(--lr-p);
+    margin-right: calc(var(--lr-p) * -1);
+    margin-top: 3em;
+}
+
+.b-slide {
+    background: linear-gradient(
+            180deg,
+            rgba(0, 0, 0, 0.4181022750897234) 0%,
+            rgba(0, 0, 0, 1) 100%
+        ),
+        var(--background);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    flex: 1 0 32.5%;
+    aspect-ratio: 16/9;
+    display: grid;
+    align-items: flex-end;
+}
+
+.b-text {
+    color: white;
+    padding: 1em;
+}
+
+.b-title {
+    padding: 0.4em 0.3em;
+    font-weight: 600;
+    font-size: var(--fs-lg);
+    background: rgba(0, 0, 0, 0.6);
+    border-bottom: 4px solid var(--primary);
+    width: fit-content;
+}
+
+.b-lmore {
+    color: var(--primary3);
+    gap: 0.5em;
+    font-weight: 500;
+}
+
+.b-desc {
+    margin-block: 0.5em 0.75em;
+}
+
+@media screen and (max-width: 1100px) {
+    .carousel-image-container {
+        transform: translateX(15%) translateY(-50%);
+    }
+
+    .b-slide {
+        flex: 1 0 40%;
+    }
+}
+
 @media screen and (max-width: 900px) {
+    #home-stats .stats {
+        max-width: 400px;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2em;
+    }
+    .carousel-image-container {
+        transform: none;
+        inset: 0;
+    }
+
+    .contact-form-div {
+        padding-inline: var(--lr-p);
+        width: 100%;
+    }
+
+    .carousel-slide {
+        align-items: flex-end;
+        padding-bottom: 3em;
+    }
+
+    .carousel-text-container {
+        padding: 1.5em;
+        border: rgba(0, 0, 0, 0.8);
+    }
+
+    #home-carousel {
+        height: calc((100vh - var(--top-offset)));
+    }
+
+    #home-carousel .media-file {
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+        object-fit: cover;
+    }
+
+    #home-carousel .media {
+        position: static;
+        height: auto;
+        padding-bottom: 0;
+    }
+    .home-ship-center {
+        width: 100%;
+    }
+
     .info {
         text-align: center;
     }
@@ -437,7 +603,12 @@ body {
     .home-contact-left-set2 {
         justify-content: center;
     }
+
+    .b-slide {
+        flex: 1 0 66%;
+    }
 }
+
 @media screen and (max-width: 800px) {
     #home-about {
         grid-template-areas:
@@ -446,7 +617,22 @@ body {
             "announcements";
         gap: 1em;
     }
+
+    .b-slide {
+        flex: 1 0 89%;
+    }
 }
 
 @media screen and (max-width: 400px) {
+    .home-form-inputtop > * {
+        width: 100%;
+    }
+
+    .b-slider {
+        gap: 1em;
+    }
+
+    .b-slide {
+        flex: 1 0 97%;
+    }
 }

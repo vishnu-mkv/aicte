@@ -62,6 +62,36 @@ block content
         +getPageRoll(quicklinks, "Quick Links", "", "quick-links")
         +getPageRoll(announcements, "Announcements", "", "announcements")
 
+    #home-stats.gray-bg
+        h2.sub-title.center Our Institutes 
+        .stats
+            .stat-container 
+                img(src="/images/image 64.svg" alt="")
+                .stat-info 
+                    p.big-stat 9.6 K
+                    p.stat-what Institutions
+            .stat-container 
+                img(src="/images/image 65.svg" alt="")
+                .stat-info 
+                    p.big-stat 196
+                    p.stat-what New Institutions
+            .stat-container 
+                img(src="/images/image 66.svg" alt="")
+                .stat-info 
+                    p.big-stat 3.0 M
+                    p.stat-what Total Intake
+            .stat-container 
+                img(src="/images/image 67.svg" alt="")
+                .stat-info 
+                    p.big-stat 652 K
+                    p.stat-what Placement
+
+        p.year In the Academic Year of 2020 - 2021
+
+        a(href='/' class="flex underlink") 
+            span View More on AICTE Dashboard
+            img(src="/images/Arrow 7.svg" alt="readmore" id="readmore")
+
     #home-news.width-control-700 
         .sub-title.center News 
         .content-container 
@@ -70,7 +100,7 @@ block content
                 -var data = news[i++]
                 .news-container
                     .news-bottom 
-                        img(src="/images/calender.svg", class="calendar" alt="")
+                        img(src="/images/calender.svg" class="calendar" alt="")
                         span.date= moment(data.date).format('MMMM Do, YYYY')
                         span.dot &bull;
                         span.source= data.source
@@ -80,20 +110,60 @@ block content
             span Read More News
             img(src="/images/Arrow 7.svg" alt="readmore" id="readmore")
 
-    #news-press.width-control-400 
-        .sub-title.center Press Releases 
-        .content-container 
-            -var i=0
-            while i < 3
-                -var data = press[i++]
-                .news-container
-                    .news-bottom 
-                        img(src="/images/calender.svg", class="calendar" alt="")
-                        span.date= moment(data.date).format('MMMM Do, YYYY')
-                    a.headline(href=`${data.url}`)= data.content
-        a(href='/' class="flex underlink") 
-            span See More Press Releases
-            img(src="/images/Arrow 7.svg" alt="readmore" id="readmore")
+    #press-wrapper.gray-bg
+        #news-press.width-control-400
+            .sub-title.center Press Releases 
+            .content-container 
+                -var i=0
+                while i < 3
+                    -var data = press[i++]
+                    .news-container
+                        .news-bottom 
+                            img(src="/images/calender.svg" class="calendar" alt="")
+                            span.date= moment(data.date).format('MMMM Do, YYYY')
+                        a.headline(href=`${data.url}`)= data.content
+            a(href='/' class="flex underlink") 
+                span See More Press Releases
+                img(src="/images/Arrow 7.svg" alt="readmore" id="readmore")
+
+    #bureaus.pd 
+        .sub-title.center Bureaus 
+        #b-scroller.flex.snap-scroll 
+            .b-slide(style="--background: url('/images/Homepage_Bureas_RIFD.jfif')")
+                .b-text
+                    .b-title Overview
+                    .b-desc An Overview of Bureaus and Cells.
+                    .flex.b-lmore 
+                        span Learn More
+                        img(src="/images/bx_bxs-right-arrow.svg" alt="")
+            .b-slide(style="--background: url('/images/Homepage_Bureas_Approvals.jpg')")
+                .b-text
+                    .b-title Approval
+                    .b-desc As defined in the AICTE act 1987, Technical Education means programmes of Education, Research, and training in Engineering and Technology, Architecture, Town Planning, Management, Pharmacy, and Applied Arts and Crafts, and such other programmes or areas as the Central Government may in consultation with the Council.
+                    .flex.b-lmore 
+                        span Learn More
+                        img(src="/images/bx_bxs-right-arrow.svg" alt="")
+            .b-slide(style="--background: url('/images/Homepage_Bureas_Policy.jpg')")
+                .b-text
+                    .b-title Policy & Academic Planning
+                    .b-desc Planning and framing of policies related to Academics for strengthening and improving quality of Technical Education
+                    .flex.b-lmore 
+                        span Learn More
+                        img(src="/images/bx_bxs-right-arrow.svg" alt="")
+            .b-slide(style="--background: url('/images/Homepage_Bureaus_Administration.jpg')")
+                .b-text
+                    .b-title Administration
+                    .b-desc Administration consists of the performance or management of business operations and thus the making or implementing of major decisions. Administration can be defined as the universal process of organizing people and resources efficiently so as to direct activities toward common goals and objectives.
+                    .flex.b-lmore 
+                        span Learn More
+                        img(src="/images/bx_bxs-right-arrow.svg" alt="")
+            .b-slide(style="--background: url('/images/Homepage_Bureaus_Finance_0.jpg')")
+                .b-text
+                    .b-title Finance
+                    .b-desc Finance Bureau has been mandated to manage Finances (Funds) efficiently and effectively in such a manner as to accomplish the objectives of the organization by planning, monitoring, organizing, and controlling of the monetary resources of an organization.
+                    .flex.b-lmore 
+                        span Learn More
+                        img(src="/images/bx_bxs-right-arrow.svg" alt="")
 
 
     #scholarships.width-control-400
@@ -105,47 +175,47 @@ block content
                 <img class="home-ship-img" src="/images/home-ship-img1.svg">
                 <p class="home-ship-head">National e-Scholarship<p>
             </div>
-   
+
                 <p class="home-ship-desc">National e-Scholarship is the one-stop solution to help students seek various scholarships.</p>
-           
+
                 <button class="home-ship-button">Apply Now  <img class="home-ship-buttonimg" src="/images/home-ship-img2.svg"></img></button>
-           
+
             </div>
             <div class="home-ship-center">
             <div class="home-ship-title">
                 <img class="home-ship-img" src="/images/home-ship-img3.svg">
                 <p class="home-ship-head">Pragati and Saksham<p>
             </div>
-   
+
                 <p class="home-ship-desc">Scholarship for girls under the Pragati Scheme and scholarship for differently-abled students under Saksham Scheme.</p>
-           
+
                 <button class="home-ship-button">Apply Now  <img class="home-ship-buttonimg" src="/images/home-ship-img2.svg"></img></button>
-           
+
             </div>
             <div class="home-ship-center">
             <div class="home-ship-title">
                 <img class="home-ship-img" src="/images/home-ship-img4.svg">
                 <p class="home-ship-head">India Innovation Initiative<p>
             </div>
-   
+
                 <p class="home-ship-desc">India's largest innovation challenges jointly promoted by the CII and Department of Science & Technology.</p>
-           
+
                 <button class="home-ship-button">Apply Now  <img class="home-ship-buttonimg" src="/images/home-ship-img2.svg"></img></button>
-              
+
             </div>
             <div class="home-ship-center">
             <div class="home-ship-title">
                 <img class="home-ship-img" src="/images/home-ship-img5.svg">
                 <p class="home-ship-head">Vidya Lakshmi<p>
             </div>
-   
+
                 <p class="home-ship-desc">Vidya Lakshmi is a first-of-its-kind portal for students seeking educational loan.</p>
-           
+
                 <button class="home-ship-button">Apply Now  <img class="home-ship-buttonimg" src="/images/home-ship-img2.svg"></img></button>
-           
+
             </div>
         </div>
-          <br>
+            <br>
     h1.sub-title.center Contact Us
     <br>
     <div class="width-control-700 home-contact-left-head">
@@ -154,7 +224,7 @@ block content
                 <section class="info">
                     <br>
                     <p class="home-contaclat-left-subtitle">Contact Information</p>
-                  
+
                     <div class="home-contact-left-set">
                         <img src="/images/phone.svg" alt="phone" color="white">
                         <p class="home-contact-left-subtitlesmall">011-26131576</p>
@@ -169,14 +239,14 @@ block content
                     </div>
                 </section>
                     <div class="home-contact-left-set2">
-                        <img src="/images/facebook.svg" height="20px" width="20px" alt="location" color="white">
-                        <img src="/images/twittericon.svg" height="20px" width="20px" alt="location" color="white">
-                        <img src="/images/andriodicon.svg" height="20px" width="20px" alt="location" color="white">
+                        <img src="/images/facebook.svg" height="24px" width="24px" alt="location" color="white">
+                        <img src="/images/twittericon.svg" height="24px" width="24px" alt="location" color="white">
+                        <img src="/images/andriodicon.svg" height="24px" width="24px" alt="location" color="white">
                     </div>
             </div>
             </div>
             <div class="contact-form-div">
-            <h2 class="home-contact-left-subtitle" >Contact Form</h2>
+            <h2 class="home-contact-left-subtitle">Contact Form</h2>
             <form>
                 <div>
                     <div class="home-form-inputtop">
@@ -221,5 +291,22 @@ block content
     </div>
     </div>
     <br>
+
+    #subscribe-cover
+        #sub-container 
+            h2 Subscribe to our Newsletters 
+
+            #sub-form 
+                input(type="email" placeholder="Enter Your Email Address") 
+                button SUBSCRIBE
+
+            .btn-grps-social 
+                img(src="/images/bxl_facebook.svg" alt="")
+                img(src="/images/fa-brands_flickr.svg" alt="")
+                img(src="/images/bxl_youtube.svg" alt="")
+                img(src="/images/ant-design_twitter-outlined.svg" alt="")
+                img(src="/images/ant-design_instagram-outlined.svg" alt="")
+
+
 block scripts 
     script(src="/javascripts/index.js")     

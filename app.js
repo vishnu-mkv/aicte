@@ -3,7 +3,7 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-
+require('dotenv').config();
 
 var indexRouter = require('./routes/index');
 
@@ -15,6 +15,9 @@ app.set('view engine', 'pug');
 
 // momentjs
 app.locals.moment = require('moment');
+
+//  S3
+let STATIC_DIR_BASE_URL = process.env.S3_URL;
 
 if(process.env.NODE_ENV !== "production") {
 
@@ -33,13 +36,15 @@ if(process.env.NODE_ENV !== "production") {
   
   app.use(connectLiveReload());
 
+  // local
+  STATIC_DIR_BASE_URL = path.join(__dirname, 'public');
 }
 
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(STATIC_DIR_BASE_URL));
 
 // /
 app.use('/', indexRouter);

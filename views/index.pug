@@ -4,7 +4,7 @@ mixin getBanner(data)
     .carousel-slide
         .carousel-image-container
             .media.carousel-image
-                img.media-file(src=data.image_url)
+                img.media-file(src=s3 + data.image_url)
         .text-wrapper.width-control-700
             .carousel-text-container
                 h1.aicte-text= data.title
@@ -22,7 +22,7 @@ mixin getPageRoll(data, title, url, className)
                 a(href=`${val.url}`)= val.title  
         a.btn-more(href=`${url}`)
             span More  
-            img(src="/images/readmore.svg" alt="readmore" id="readmore")
+            img(src = "/images/readmore.svg" alt="readmore" id="readmore")
 
 block css
 

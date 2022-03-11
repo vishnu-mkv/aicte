@@ -3,7 +3,9 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+require('dotenv').config();
 
+const { auth } = require('express-openid-connect');
 
 var indexRouter = require('./routes/index');
 
@@ -39,7 +41,20 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
+
 app.use(express.static(path.join(__dirname, 'public')));
+
+
+const config = {
+  authRequired: false,
+  auth0Logout: true,  
+  secret: process.env.AUTH0_SECRET,
+  baseURL: process.env.BASE_URL,
+  clientID: process.env.CLIENT_ID,
+  issuerBaseURL: process.env.ISSUER_BASE_URL
+};
+
+app.use(auth(config));
 
 // /
 app.use('/', indexRouter);

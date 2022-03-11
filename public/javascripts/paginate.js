@@ -5,6 +5,30 @@
 
 // listen for content-clicked event when clicked on content
 
+var getUrlParameter = function getUrlParameter(sParam) {
+    var sPageURL = window.location.search.substring(1),
+        sURLVariables = sPageURL.split('&'),
+        sParameterName,
+        i;
+
+    for (i = 0; i < sURLVariables.length; i++) {
+        sParameterName = sURLVariables[i].split('=');
+
+        if (sParameterName[0] === sParam) {
+            return sParameterName[1] === undefined ? 1 : decodeURIComponent(sParameterName[1]);
+        }
+    }
+    return 1;
+};
+
+if(typeof(String.prototype.trim) === "undefined")
+{
+    String.prototype.trim = function() 
+    {
+        return String(this).replace(/^\s+|\s+$/g, '');
+    };
+}
+
 $(document).ready(function() {
 
 // there should be a #content-container
@@ -13,6 +37,7 @@ const paginator = $('#paginator');
 const pageNumbersContainer = paginator.find('#paginate-numbers');
 const next = paginator.find('#next');
 const prev = paginator.find('#prev');
+let firstPageLoading = true;
 
 // pass api as data-api attribute
 const apiURL = paginator.data('api');
@@ -116,11 +141,19 @@ const loadOnClick = (button) => {
     getPage(button.data('page'));
 };
 
-const getPage = (pageNumber) => {
+const getPage = (pageNumber, addToHistory=true) => {
     if(!pageNumber || pageNumber < 0) return;
 
     contentContainer.empty();
     pageNumbersContainer.empty();
+
+    if(addToHistory) {
+        let url = window.location.href.split('?')[0]+'?page='+pageNumber;
+        window.history.pushState({pageNumber}, 'Page - '+pageNumber, url);
+
+        let title = ($(document).find("title").text().split('[')[0]).trim();
+        $(document).find("title").text(title + ' [Page - ' + pageNumber + ']');
+    }
 
     $(document).trigger('showLoader', [pageLoader]);
 
@@ -133,5 +166,10 @@ const getPage = (pageNumber) => {
 next.on('click', _ => loadOnClick(next));
 prev.on('click', _ => loadOnClick(prev));
 
-getPage(1);
+getPage(getUrlParameter('page'), false);
+
+window.addEventListener('popstate', function(e){
+    if(e.state)
+        getPage(e.state.pageNumber, false);
+});
 });

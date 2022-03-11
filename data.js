@@ -1,6 +1,5 @@
 var fs = require('fs');
 const mongoose = require("mongoose");
-require('dotenv').config();
 
 var Banner = require('./data/models/banner');
 var QuickLink = require('./data/models/quick-links');

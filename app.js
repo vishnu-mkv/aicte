@@ -17,7 +17,7 @@ app.set('view engine', 'pug');
 app.locals.moment = require('moment');
 
 //  S3
-let STATIC_DIR_BASE_URL = process.env.S3_URL;
+app.locals.s3 = process.env.S3_URL;
 
 if(process.env.NODE_ENV !== "production") {
 
@@ -37,14 +37,14 @@ if(process.env.NODE_ENV !== "production") {
   app.use(connectLiveReload());
 
   // local
-  STATIC_DIR_BASE_URL = path.join(__dirname, 'public');
+  app.locals.s3 = '';
 }
 
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(STATIC_DIR_BASE_URL));
+app.use(express.static(path.join(__dirname, 'public')));
 
 // /
 app.use('/', indexRouter);

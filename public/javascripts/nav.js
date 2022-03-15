@@ -53,25 +53,29 @@ $(document).ready(function () {
         switchToDark();
     });
 
-    function switchToDark() {
+    function switchToDark(setState) {
         light.removeClass('hide');
         dark.addClass('hide');
         $(document.body).addClass('dark');
+        if(setState === false) return; 
         localStorage.setItem('dark', 'true');
     }
 
-    function switchToLight() {
+    function switchToLight(setState) {
         dark.removeClass('hide');
         light.addClass('hide');
         $(document.body).removeClass('dark');
+        if(setState === false) return; 
         localStorage.setItem('dark', 'false');
     }
 
-    if(localStorage.getItem('dark') === 'true') switchToDark();
-
-    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        switchToDark();
+    if (localStorage.getItem("dark") === null && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        switchToDark(false);
     }
+
+    if(localStorage.getItem('dark') === 'true') switchToDark();
+    else switchToLight();
+
 
 });
 

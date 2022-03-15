@@ -3,13 +3,14 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-require('dotenv').config();
-
+const helmet = require("helmet")
 const { auth } = require('express-openid-connect');
-
 var indexRouter = require('./routes/index');
 
+require('dotenv').config();
 var app = express();
+
+// app.use(helmet());
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

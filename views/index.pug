@@ -12,7 +12,7 @@ mixin getBanner(data)
                     h2= data.summary
                     a(href=`${data.url}` class="btn-more") 
                         span= data.url_text
-                        img(src="/images/Arrow 7.svg" alt="readmore" id="readmore")
+                        img(src=s3 + "/images/Arrow 7.svg" alt="readmore" id="readmore")
 
 mixin getPageRoll(data, title, url, className)
     div(class=`page-roll ${className}`)
@@ -175,47 +175,47 @@ block content
                 <img class="home-ship-img" src="/images/home-ship-img1.svg">
                 <p class="home-ship-head">National e-Scholarship<p>
             </div>
-
+   
                 <p class="home-ship-desc">National e-Scholarship is the one-stop solution to help students seek various scholarships.</p>
-
+           
                 <button class="home-ship-button">Apply Now  <img class="home-ship-buttonimg" src="/images/home-ship-img2.svg"></img></button>
-
+           
             </div>
             <div class="home-ship-center">
             <div class="home-ship-title">
                 <img class="home-ship-img" src="/images/home-ship-img3.svg">
                 <p class="home-ship-head">Pragati and Saksham<p>
             </div>
-
+   
                 <p class="home-ship-desc">Scholarship for girls under the Pragati Scheme and scholarship for differently-abled students under Saksham Scheme.</p>
-
+           
                 <button class="home-ship-button">Apply Now  <img class="home-ship-buttonimg" src="/images/home-ship-img2.svg"></img></button>
-
+           
             </div>
             <div class="home-ship-center">
             <div class="home-ship-title">
                 <img class="home-ship-img" src="/images/home-ship-img4.svg">
                 <p class="home-ship-head">India Innovation Initiative<p>
             </div>
-
+   
                 <p class="home-ship-desc">India's largest innovation challenges jointly promoted by the CII and Department of Science & Technology.</p>
-
+           
                 <button class="home-ship-button">Apply Now  <img class="home-ship-buttonimg" src="/images/home-ship-img2.svg"></img></button>
-
+              
             </div>
             <div class="home-ship-center">
             <div class="home-ship-title">
                 <img class="home-ship-img" src="/images/home-ship-img5.svg">
                 <p class="home-ship-head">Vidya Lakshmi<p>
             </div>
-
+   
                 <p class="home-ship-desc">Vidya Lakshmi is a first-of-its-kind portal for students seeking educational loan.</p>
-
+           
                 <button class="home-ship-button">Apply Now  <img class="home-ship-buttonimg" src="/images/home-ship-img2.svg"></img></button>
-
+           
             </div>
         </div>
-            <br>
+          <br>
     h1.sub-title.center Contact Us
     <br>
     <div class="width-control-700 home-contact-left-head">
@@ -224,7 +224,7 @@ block content
                 <section class="info">
                     <br>
                     <p class="home-contaclat-left-subtitle">Contact Information</p>
-
+                  
                     <div class="home-contact-left-set">
                         <img src="/images/phone.svg" alt="phone" color="white" class="i-1">
                         <p class="home-contact-left-subtitlesmall">011-26131576</p>
@@ -246,7 +246,7 @@ block content
             </div>
             </div>
             <div class="contact-form-div">
-            <h2 class="home-contact-left-subtitle">Contact Form</h2>
+            <h2 class="home-contact-left-subtitle" >Contact Form</h2>
             <form>
                 <div>
                     <div class="home-form-inputtop">

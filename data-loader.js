@@ -13,7 +13,7 @@ const LoadData = (app) => {
 
     return new Promise((resolve, reject) => {
         // nav data
-        var navData = JSON.parse(fs.readFileSync('./data/nav.json', 'utf8'));
+        var navData = JSON.parse(fs.readFileSync('./data/json/nav.json', 'utf8'));
         app.locals.navData = navData;
         // app.locals.banners = JSON.parse(fs.readFileSync('./data/banner.json', 'utf8'));
         // app.locals.quicklinks = JSON.parse(fs.readFileSync('./data/quick-links.json', 'utf8'));

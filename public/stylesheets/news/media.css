@@ -10,12 +10,16 @@
     gap: 1.5em;
 }
 
+.dark #news-media .media-container {
+    --c: #1a1a1a;
+}
 #news-media .media-container {
+    --c: #f6f6f6;
     flex: 0 0 calc(33.33% - 1em);
     display: grid;
     grid-template-rows: auto var(--title-height);
     place-items: center;
-    background-color: #f6f6f6;
+    background-color: var(--c);
     gap: 0.75em;
     padding: 1em;
 }

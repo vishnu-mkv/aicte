@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 
 const imageGallerySchema = new Schema({
     cover: String,
-    date: String,
+    date: Date,
     images: [String],
     name: String
 }, {timestamps: true});

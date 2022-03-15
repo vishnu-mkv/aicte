@@ -76,27 +76,19 @@ const getPageNumbers = (current, limit, total) => {
     return pageNumbers;
 }
 
-const getContent = (data) => {
+const getHTML = str => {
     var template = document.createElement('template');
-    template.innerHTML = createContent(data).trim();
+    template.innerHTML = str.trim();
     return template.content.firstChild;
 }
 
-const processData = data => {
+const getContent = (data) => {
+    return getHTML(createContent(data));
+}
 
-    currentData = data;
+const hideTools = (data) => {
 
-    // add docs to container
-    for(let [index, doc] of data.docs.entries()) {
-        let content = $(getContent(doc));
-        content.attr('data-index', index);
-
-        //on click fire content-clicked event
-        content.on('click', {currentData}, e => {
-            contentContainer.trigger('content-clicked', [e.data.currentData.docs[$(e.currentTarget).data('index')]]);
-        });
-        contentContainer.append(content);
-    }
+    $(document).trigger('hideLoader', [pageLoader]);
 
     // toggle next prev buttons
     if(data.hasNextPage) {
@@ -110,6 +102,31 @@ const processData = data => {
         prev.data('page', data.prevPage);
     }
     else prev.addClass('hide');
+}
+
+const processData = data => {
+
+    currentData = data;
+
+    if(data.totalDocs == 0) {
+        contentContainer.append(`<center>No records found</center>`);
+        hideTools(data);
+        return;
+    }
+
+    if(typeof prePopulate === "function") contentContainer.append(getHTML(prePopulate()));
+
+    // add docs to container
+    for(let [index, doc] of data.docs.entries()) {
+        let content = $(getContent(doc));
+        content.attr('data-index', index);
+
+        //on click fire content-clicked event
+        content.on('click', {currentData}, e => {
+            contentContainer.trigger('content-clicked', [e.data.currentData.docs[$(e.currentTarget).data('index')]]);
+        });
+        contentContainer.append(content);
+    }
 
     // clear and add page numbers
     for(let number of getPageNumbers(data.page, data.limit, data.totalDocs)) {
@@ -132,8 +149,7 @@ const processData = data => {
         });
     } 
 
-    console.log(pageLoader);
-    $(document).trigger('hideLoader', [pageLoader]);
+    hideTools(data);
 }
 
 const loadOnClick = (button) => {
@@ -171,5 +187,6 @@ getPage(getUrlParameter('page'), false);
 window.addEventListener('popstate', function(e){
     if(e.state)
         getPage(e.state.pageNumber, false);
+    else getPage(1, false);
 });
 });

@@ -11,7 +11,7 @@ const createContent = data => {
             <p>${data.name}</p>
             <div class="media-bottom">
                 <div class="left">
-                    <img src="/images/images.svg">
+                    <img src="/images/images.svg" class="i-1">
                     <span>${data.images.length} images</span>
                 </div>
                 <span>${moment(data.date).format('DD-MM-YYYY')}</span>

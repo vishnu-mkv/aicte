@@ -1,0 +1,86 @@
+extends ../layouts/admin-layout 
+
+mixin handleDate(val)
+    p.f-date= moment(val).format('LLLL')
+
+mixin handleField(field, val)
+    -let type = field.type
+    if type === 'text'
+        p.f-text= val
+    else if type === 'image'
+        img(src=s3+val, alt="").f-image
+    else if type === 'image-src' || type == 'link'
+        a(href=val target="_blank").f-url= val
+    else if type === 'date'
+        +handleDate(val)
+    else if type === 'array'
+        .array 
+            p.count 
+                span Count: 
+                span.a-count= val.length
+            each entry, index in val 
+                +handleField(field.field, entry)
+
+mixin handleInstance()
+    #detailsContainer 
+        h2.sub-title.left Instance Details
+        .details
+            each field in model.format.fields 
+                .field
+                    h4.field-name= field.verbose_name
+                    +handleField(field, instance[field.name])
+    #other-details
+        h2.sub-title.left Other Details
+        .details
+            .field
+                h4.field-name ID
+                p.f-text= instance._id
+            .field
+                h4.field-name Version
+                p.f-text= instance.__v ? instance.__v : "-"
+            .field
+                h4.field-name Updated At
+                +handleDate(instance['updateddAt'])
+            .field
+                h4.field-name Created At
+                +handleDate(instance['createdAt'])
+
+block css 
+    link(rel="stylesheet" href="/stylesheets/partials/popup.css")
+    link(rel="stylesheet", href="/stylesheets/admin/view.css")
+    link(rel="stylesheet" href="/stylesheets/partials/overlay.css")
+
+block content 
+    .view-header.flex 
+        .view-left 
+            a(href="/admin/"+modelId)
+                h3= name 
+            p model-id: 
+                span= modelId
+            p instance-id: 
+                span= instance._id
+        .view-right.flex 
+            a(href=instance._id+"/edit").flex.action.edit 
+                span Edit 
+                img(src="/images/edit.svg", alt="")
+            button.flex.action.delete#delete-btn(data-deleteapi=API+'/'+instance._id data-forward='/admin/'+modelId) 
+                span Delete
+                img(src="/images/delete_black_24dp.svg", alt="")
+
+    +handleInstance()
+
+    #popup-template.hide
+            #popup-content-template.delete-popup
+                h2.sub-title.left Confirm Delete
+                p Are you sure you want to delete this record?
+                .view-right.flex
+                    button.action.flex#confirm-delete Confirm
+                    button.action.flex#cancel-delete Cancel
+
+    p#success-msg.status-message.hide-msg Deleted Successfully 
+    p#error-msg.status-message.hide-msg Something went wrong
+
+block scripts 
+    script(src="/javascripts/admin/view.js" defer)
+    script(src="/javascripts/popup.js" defer) 
+    script(src="/javascripts/overlay.js" defer) 

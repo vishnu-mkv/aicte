@@ -14,15 +14,18 @@ html {
 
 :root {
     --primary: #004b76;
+    --primaryc: #004b76;
     --orange: var(--primary);
     --green: #007430;
     --primary2: #062135;
     --primary3: #68bbea;
+    --primary4: #69d6e8;
     --yellow: #f9e900;
     --black: #000;
     --black2: rgb(27, 27, 27);
     --grey: #fffff0;
     --grey2: #cccccc;
+    --grey3: #e5e5e5;
     --milk-white: #fffef7;
     --white: #ffffff;
     --light-black: #4f4f4f;
@@ -41,15 +44,57 @@ html {
     --lr-p: 1em;
     --status-bar-height: 3rem;
     --primary-nav-height: 5rem;
+    --t-white: rgba(255, 255, 255, 0.5);
+    --t-white2: rgba(255, 255, 255, 0.9); 
+    --t-white3: rgba(255, 255, 255, 0.75); 
+    --white3: rgb(252 252 252);
+    --nav-color: #eaf6ff;
     --top-offset: calc(
         var(--status-bar-height) + var(--nav-height) + var(--primary-nav-height)
     );
+    color: var(--black);
+    background-color: var(--white);
 }
 
 @media screen and (max-width: 700px) {
     :root {
         --lr-padding: 0.5em;
     }
+}
+
+.dark {
+    --primary: #0d91dd;
+    --orange: var(--primary);
+    --green: #1be970;
+    --primary2: #3d89c4;
+    --primary3: #367da7;
+    --primary4: #69d6e8;
+    --yellow: #f9e900;
+    --black: #fff;  
+    --black2: rgb(236, 236, 236);
+    --grey: #a0a0a0;
+    --grey2: #3a3a3a;
+    --grey3: #313131;
+    --milk-white: #1a1a1a;
+    --white: rgb(22, 22, 22);
+    --light-black: #cecece;
+    --gray4: #111111;
+    --paper-white: #2b2b2b;
+    --t-white: rgba(0, 0, 0, 0.5); 
+    --t-white2: rgba(0, 0, 0, 0.9); 
+    --t-white3: rgba(0, 0, 0, 0.75); 
+    --white3: rgb(44, 44, 44);
+    --nav-color: var(--white);
+    color: var(--black);
+    background-color: var(--white);
+}
+
+.dark .i-1 {
+    filter: invert(1);
+}
+
+.dark .i-0 {
+    filter: invert(0);
 }
 
 html,
@@ -66,6 +111,7 @@ body {
     line-height: 28px;
     letter-spacing: 0.5px;
     font-size: var(--fs-md);
+    transition: color 500ms linear, background-color 500ms linear;
 }
 
 .width-control-700 {
@@ -96,7 +142,7 @@ body {
     background-color: var(--orange);
     border: none;
     border-radius: 0.3em;
-    color: white;
+    color: var(--white);
     height: fit-content;
 }
 
@@ -124,7 +170,7 @@ body {
     background-color: var(--primary);
     border: none;
     border-radius: 0.3em;
-    color: white;
+    color: var(--white);
     width: fit-content;
     font-size: var(--fs-md);
 }

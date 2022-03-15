@@ -21,7 +21,7 @@ block content
                 each data in news
                     .news-container
                         .news-bottom 
-                            img(src="/images/calender.svg", class="calendar" alt="")
+                            img(src="/images/calender.svg", class="calendar i-1" alt="")
                             span.date= moment(data.date).format('MMMM Do, YYYY')
                             span.dot &bull;
                             span.source= data.source
@@ -29,7 +29,7 @@ block content
                         p.content= data.content.indexOf(".") !== -1 ? data.content.substring(0, data.content.indexOf(".")) : data.content
             a(href='/' class="flex underlink") 
                 span Read More News
-                img(src="/images/Arrow 7.svg" alt="readmore" id="readmore")
+                img(src="/images/Arrow 7.svg" alt="readmore" id="readmore").i-0
 
         .press-overview
             h2.sub-title.left Press Releases
@@ -37,12 +37,12 @@ block content
                 each data in press
                     .news-container
                         .news-bottom 
-                            img(src="/images/calender.svg", class="calendar" alt="")
+                            img(src="/images/calender.svg", class="calendar i-1" alt="")
                             span.date= moment(data.date).format('MMMM Do, YYYY')
                         a.headline(href=`${data.url}`)= data.content
             a(href='/' class="flex underlink") 
                 span See More Press Releases
-                img(src="/images/Arrow 7.svg" alt="readmore" id="readmore")
+                img(src="/images/Arrow 7.svg" alt="readmore" id="readmore").i-0
 
     #media-contact-section
         h1.sub-title.center Media Conatct

@@ -1,7 +1,7 @@
 mixin generateSubMenu(data)
 	.submenu.width-control-700(class= data.items.length <= 6 ? "x6" : "x12" id="menu-"+data.title)
 		.submenu-left.flex 
-			img.hide-lg.nav-back(src="/images/navigate_before.svg" alt="")
+			img.hide-lg.nav-back(src="/images/navigate_before.svg" alt="").i-1
 			h2= data.title
 		.submenu-right
 			each item in data.items
@@ -11,7 +11,7 @@ mixin generateMenu(data, hide)
 	.submenu-container(tabindex=0, class=hide?"hide-lg":"")
 		.menu-head.flex 
 			span= data.title 
-			img(src="/images/downarrow.svg" alt="")
+			img(src="/images/downarrow.svg" alt="").i-1
 		.submenu-wrapper
 			+generateSubMenu(data)
 
@@ -20,9 +20,12 @@ mixin generateMenu(data, hide)
 #nav-container
 	#status-wrapper.w-wrapper
 		#status.flex.width-control-700
-			.action.flex 
+			.action.flex.hide#light 
 				span.hide-sm Light Mode
 				img(src="/images/light-mode.svg" alt="")
+			.action.flex#dark 
+				span.hide-sm Dark Mode
+				img(src="/images/dark_mode_black_18dp.svg" alt="")
 			.action.flex
 				span.hide-sm Text size
 				div.font-grp.flex
@@ -35,8 +38,8 @@ mixin generateMenu(data, hide)
 	#header-wrapper.w-wrapper
 		#header.flex.width-control-700
 			#m-icons.hide-lg 
-				img#menu-icon.hide-lg(src="/images/menu-icon.svg" alt="") 
-				img#close-icon.hide(src="/images/close-icon.svg" alt="") 
+				img#menu-icon.hide-lg(src="/images/menu-icon.svg" alt="").i-1 
+				img#close-icon.hide(src="/images/close-icon.svg" alt="").i-1
 			#nav-left.flex 
 				img#aicte-logo.hide-sm(src="/images/aicte-logo.png" alt="")
 				a.logo.hide-sm(href="/")  
@@ -44,7 +47,7 @@ mixin generateMenu(data, hide)
 					span ALL INDIA COUNCIL OF TECHNICAL EDUCATION
 				a.hide-lg(href="/") AICTE
 			#nav-right
-				img(src="/images/search.svg" alt="")
+				img(src="/images/search.svg" alt="").i-1
 	#nav-wrapper.w-wrapper
 		nav#primary-nav.flex.width-control-700
 			a#home(href="/") Home
@@ -58,7 +61,7 @@ mixin generateMenu(data, hide)
 			.submenu-container#info-menu.hide-sm(tabindex=0) 
 				.menu-head.flex 
 					span Information 
-					img(src="/images/downarrow.svg" alt="")
+					img(src="/images/downarrow.svg" alt="").i-1
 				#info-wrapper.submenu-wrapper
 					#info-menu-scroller.width-control-700
 						while i < navData.length

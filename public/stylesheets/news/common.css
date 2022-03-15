@@ -30,6 +30,10 @@
     justify-content: center;
 }
 
+.dark .news-container {
+    background-color: var(--milk-white);
+}
+
 .news-container {
     display: flex;
     flex-direction: column;

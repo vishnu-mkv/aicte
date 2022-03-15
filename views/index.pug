@@ -4,7 +4,7 @@ mixin getBanner(data)
     .carousel-slide
         .carousel-image-container
             .media.carousel-image
-                img.media-file(src=data.image_url)
+                img.media-file(src=s3 + data.image_url)
         .text-wrapper.width-control-700
             .carousel-text-container
                 h1.aicte-text= data.title
@@ -22,7 +22,7 @@ mixin getPageRoll(data, title, url, className)
                 a(href=`${val.url}`)= val.title  
         a.btn-more(href=`${url}`)
             span More  
-            img(src="/images/readmore.svg" alt="readmore" id="readmore")
+            img(src = "/images/readmore.svg" alt="readmore" id="readmore").i-1
 
 block css
 
@@ -40,8 +40,8 @@ block content
 
         #carousel-controls 
             .arrows
-                img(src="/images/navigate_before.svg" alt="previous-slide" id="prev-slide")
-                img(src="/images/navigate_before.svg" alt="next-slide" class="right-arrow" id="next-slide")
+                img(src="/images/navigate_before.svg" alt="previous-slide" id="prev-slide").i-1
+                img(src="/images/navigate_before.svg" alt="next-slide" class="right-arrow" id="next-slide").i-1
             -var n = 0
             #slide-indicators
                 while n < banners.length
@@ -66,22 +66,22 @@ block content
         h2.sub-title.center Our Institutes 
         .stats
             .stat-container 
-                img(src="/images/image 64.svg" alt="")
+                img(src="/images/image 64.svg" alt="").i-1
                 .stat-info 
                     p.big-stat 9.6 K
                     p.stat-what Institutions
             .stat-container 
-                img(src="/images/image 65.svg" alt="")
+                img(src="/images/image 65.svg" alt="").i-1
                 .stat-info 
                     p.big-stat 196
                     p.stat-what New Institutions
             .stat-container 
-                img(src="/images/image 66.svg" alt="")
+                img(src="/images/image 66.svg" alt="").i-1
                 .stat-info 
                     p.big-stat 3.0 M
                     p.stat-what Total Intake
             .stat-container 
-                img(src="/images/image 67.svg" alt="")
+                img(src="/images/image 67.svg" alt="").i-1
                 .stat-info 
                     p.big-stat 652 K
                     p.stat-what Placement
@@ -90,7 +90,7 @@ block content
 
         a(href='/' class="flex underlink") 
             span View More on AICTE Dashboard
-            img(src="/images/Arrow 7.svg" alt="readmore" id="readmore")
+            img(src="/images/Arrow 7.svg" alt="readmore" id="readmore").i-0
 
     #home-news.width-control-700 
         .sub-title.center News 
@@ -100,7 +100,7 @@ block content
                 -var data = news[i++]
                 .news-container
                     .news-bottom 
-                        img(src="/images/calender.svg" class="calendar" alt="")
+                        img(src="/images/calender.svg" class="calendar" alt="").i-1
                         span.date= moment(data.date).format('MMMM Do, YYYY')
                         span.dot &bull;
                         span.source= data.source
@@ -108,7 +108,7 @@ block content
                     p.content= data.content.indexOf(".") !== -1 ? data.content.substring(0, data.content.indexOf(".")) : data.content
         a(href='/' class="flex underlink") 
             span Read More News
-            img(src="/images/Arrow 7.svg" alt="readmore" id="readmore")
+            img(src="/images/Arrow 7.svg" alt="readmore" id="readmore").i-0
 
     #press-wrapper.gray-bg
         #news-press.width-control-400
@@ -119,16 +119,16 @@ block content
                     -var data = press[i++]
                     .news-container
                         .news-bottom 
-                            img(src="/images/calender.svg" class="calendar" alt="")
+                            img(src="/images/calender.svg" class="calendar" alt="").i-1
                             span.date= moment(data.date).format('MMMM Do, YYYY')
                         a.headline(href=`${data.url}`)= data.content
             a(href='/' class="flex underlink") 
                 span See More Press Releases
-                img(src="/images/Arrow 7.svg" alt="readmore" id="readmore")
+                img(src="/images/Arrow 7.svg" alt="readmore" id="readmore").i-0
 
     #bureaus.pd 
         .sub-title.center Bureaus 
-        #b-scroller.flex.snap-scroll 
+        #b-scroller.flex.snap-scroll.hide-scroller 
             .b-slide(style="--background: url('/images/Homepage_Bureas_RIFD.jfif')")
                 .b-text
                     .b-title Overview
@@ -226,22 +226,22 @@ block content
                     <p class="home-contaclat-left-subtitle">Contact Information</p>
 
                     <div class="home-contact-left-set">
-                        <img src="/images/phone.svg" alt="phone" color="white">
+                        <img src="/images/phone.svg" alt="phone" color="white" class="i-1">
                         <p class="home-contact-left-subtitlesmall">011-26131576</p>
                     </div>
                     <div class="home-contact-left-set">
-                        <img src="/images/mail.svg" alt="email" color="white">
+                        <img src="/images/mail.svg" alt="email" color="white" class="i-1">
                         <p class="home-contact-left-subtitlesmall">chairman@aicte-india.org</p>
                     </div>
                     <div class="home-contact-left-set">
-                        <img src="/images/location.svg"class="special-image" alt="location" color="white">
+                        <img src="/images/location.svg"class="special-image i-1" alt="location" color="white">
                         <p class="home-contact-left-subtitlesmall">Vasant Kunj, New Delhi</p>
                     </div>
                 </section>
                     <div class="home-contact-left-set2">
-                        <img src="/images/facebook.svg" height="24px" width="24px" alt="location" color="white">
-                        <img src="/images/twittericon.svg" height="24px" width="24px" alt="location" color="white">
-                        <img src="/images/andriodicon.svg" height="24px" width="24px" alt="location" color="white">
+                        <img src="/images/facebook.svg" height="24px" width="24px" alt="location" color="white" class="i-1">
+                        <img src="/images/twittericon.svg" height="24px" width="24px" alt="location" color="white" class="i-1">
+                        <img src="/images/andriodicon.svg" height="24px" width="24px" alt="location" color="white" class="i-1">
                     </div>
             </div>
             </div>
@@ -301,11 +301,11 @@ block content
                 button SUBSCRIBE
 
             .btn-grps-social 
-                img(src="/images/bxl_facebook.svg" alt="")
-                img(src="/images/fa-brands_flickr.svg" alt="")
-                img(src="/images/bxl_youtube.svg" alt="")
-                img(src="/images/ant-design_twitter-outlined.svg" alt="")
-                img(src="/images/ant-design_instagram-outlined.svg" alt="")
+                img(src="/images/bxl_facebook.svg" alt="" class="i-1")
+                img(src="/images/fa-brands_flickr.svg" alt="" class="i-1")
+                img(src="/images/bxl_youtube.svg" alt="" class="i-1")
+                img(src="/images/ant-design_twitter-outlined.svg" alt="" class="i-1")
+                img(src="/images/ant-design_instagram-outlined.svg" alt="" class="i-1")
 
 
 block scripts 

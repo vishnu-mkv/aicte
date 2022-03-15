@@ -17,6 +17,7 @@ app.set('view engine', 'pug');
 
 // momentjs
 app.locals.moment = require('moment');
+app.locals.s3 = process.env.S3_URL;
 
 if(process.env.NODE_ENV !== "production") {
 
@@ -35,15 +36,16 @@ if(process.env.NODE_ENV !== "production") {
   
   app.use(connectLiveReload());
 
-}
+  app.locals.s3 = '';
+} 
+
+// local
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-
-app.use(express.static(path.join(__dirname, 'public')));
-
 
 const config = {
   authRequired: false,

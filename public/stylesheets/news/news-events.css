@@ -28,7 +28,7 @@
     padding: 1em;
     display: flex;
     align-items: center;
-    background-color: #fbfbfb;
+    background-color: var(--milk-white);
 }
 .rows
 {

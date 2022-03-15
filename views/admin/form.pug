@@ -1,0 +1,87 @@
+extends ../layouts/admin-layout 
+
+mixin handleDate(name, value)
+    -let val = moment(value).format('YYYY-MM-DDTHH:mm') 
+    input.f-date(type="datetime-local", name=name, value=val)
+
+mixin handleArrayImage(field, parent, val)
+    .image-upload.flex&attributes(attributes)
+            input(type="text" name=field.name data-arrayparent=parent value=val)
+            img(src="/images/file_upload_black_18dp.svg", alt="").uploader.pointer
+            img(src="/images/delete_black_24dp.svg", alt="").deleter.pointer
+
+mixin handleField(field, val)
+    -let type = field.type
+
+    if field.input === "textarea"
+        textarea(name=field.name oninput="auto_grow(this)")= val 
+    else if type === 'text'
+        input.f-text(type='text', name=field.name, value=val)
+    else if type === 'image' || type === 'image-src'
+        .image-upload.flex
+            input(type="text" name=field.name value=val)
+            img(src="/images/file_upload_black_18dp.svg", alt="").uploader.pointer
+    else if type == 'link'
+        input(type="text" name=field.name, value=val)
+    else if type === 'date'
+        +handleDate(field.name, val)
+    else if type === 'array'
+        .array
+            .array-fields 
+                if edit
+                    each img in val
+                        +handleArrayImage(field.field, field.name, img)
+                else
+                    +handleArrayImage(field.field, field.name, "")
+            +handleArrayImage(field.field, field.name, "")(class="array-template")
+            button(class="action flex field-adder") Add
+             
+
+mixin handleInstance()
+    form#detailsContainer(data-api=API, data-modelid=modelId)
+        h2.sub-title.left Create New #{name}
+        .details
+            each field in model.format.fields 
+                .field
+                    h4.field-name= field.verbose_name
+                    +handleField(field)
+        
+        .view-right.flex
+            button.save(type="button" id="save").action.flex Create
+            a(href="../").action.flex Cancel 
+
+mixin handleEditInstance()
+    form#detailsContainer(data-api=API, data-modelid=modelId)
+        h2.sub-title.left Edit #{name}
+        .details
+            each field in model.format.fields 
+                .field
+                    h4.field-name= field.verbose_name
+                    +handleField(field, instance[field.name])
+        
+        .view-right.flex
+            button.save(type="button" id="save").action.flex Save
+            a(href="../").action.flex Cancel 
+
+
+block css 
+    link(rel="stylesheet", href="/stylesheets/admin/view.css")
+    link(rel="stylesheet", href="/stylesheets/admin/form.css")
+
+block content 
+    .view-header.flex 
+        .view-left 
+            h3= name 
+            p model-id: 
+                span= modelId
+
+    if edit
+        +handleEditInstance()
+    else 
+        +handleInstance()
+
+    p#success-msg.status-message.hide-msg Saved Successfully 
+    p#error-msg.status-message.hide-msg Something went wrong
+
+block scripts 
+    script(src="/javascripts/admin/form.js" defer) 

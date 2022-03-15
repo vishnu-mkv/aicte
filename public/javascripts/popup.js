@@ -1,7 +1,7 @@
 // popup
 // import popup.css, popup.js 
 //  dependancy overlay.js
-// import overlay.js
+// import overlay.js, overlay.css
 // 'open-popup' event to open popup - parameters id, getPopupContent()
 // 'close-popup' event to close popup
 // 'getPopupContent()' method - return value should be HTML element to be inserted in popup

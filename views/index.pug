@@ -4,7 +4,7 @@ mixin getBanner(data)
     .carousel-slide
         .carousel-image-container
             .media.carousel-image
-                img.media-file(src=s3 + data.image_url)
+                img.media-file(src=data.image_url)
         .text-wrapper.width-control-700
             .carousel-text-container
                 h1.aicte-text= data.title
@@ -12,7 +12,7 @@ mixin getBanner(data)
                     h2= data.summary
                     a(href=`${data.url}` class="btn-more") 
                         span= data.url_text
-                        img(src=s3 + "/images/Arrow 7.svg" alt="readmore" id="readmore")
+                        img(src="/images/Arrow 7.svg" alt="readmore" id="readmore")
 
 mixin getPageRoll(data, title, url, className)
     div(class=`page-roll ${className}`)

@@ -12,7 +12,7 @@ const getPopup = (getPopupContent) => {
     var template = document.createElement('template');
     template.innerHTML = `
         <div class="popup">
-            <img src="/images/close-icon.svg" id="close-popup">
+            <img src="/images/close-icon.svg" id="close-popup" class="i-1">
             <div class="popup-content"></div>
         </div>
     `.trim();

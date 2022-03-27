@@ -10,7 +10,32 @@ var indexRouter = require('./routes/index');
 require('dotenv').config();
 var app = express();
 
-// app.use(helmet());
+app.use(helmet.contentSecurityPolicy({
+  useDefaults: false,
+  directives: {
+      defaultSrc: ["'self'"],
+      scriptSrc: ["'self'", "https://aicte-bot.live", "https://cdnjs.cloudflare.com", "https://code.jquery.com", "http://localhost:35729"],
+      connectSrc: ["'self'", "ws://localhost:35729", "https://some.other.domain.com"],
+      styleSrc: ["'self'", "fonts.googleapis.com", "'unsafe-inline'", "https://aicte-bot.live"],
+      fontSrc: ["'self'", "fonts.gstatic.com"],
+      imgSrc: ["'self'", "https://avatars.githubusercontent.com", "https://www.aicte-india.org", "data:", "https://lh3.googleusercontent.com"],
+      frameSrc: ["'self'", "https://aicte-bot.live", "https://www.youtube.com"]
+  }
+}));
+app.use(helmet.crossOriginOpenerPolicy());
+app.use(helmet.crossOriginResourcePolicy());
+app.use(helmet.dnsPrefetchControl());
+app.use(helmet.expectCt());
+app.use(helmet.frameguard());
+app.use(helmet.hidePoweredBy());
+app.use(helmet.hsts());
+app.use(helmet.ieNoOpen());
+app.use(helmet.noSniff());
+app.use(helmet.originAgentCluster());
+app.use(helmet.permittedCrossDomainPolicies());
+app.use(helmet.referrerPolicy());
+app.use(helmet.xssFilter());
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

@@ -1,4 +1,4 @@
-body {
+#site-wrapper {
     gap: 0;
 }
 
@@ -82,6 +82,7 @@ body {
     color: var(--primary);
     font-family: "Open Sans", sans-serif;
     width: fit-content;
+    line-height: 1.05em;
 }
 
 .text-right > h2 {

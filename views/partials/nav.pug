@@ -1,7 +1,7 @@
 mixin generateSubMenu(data)
 	.submenu.width-control-700(class= data.items.length <= 6 ? "x6" : "x12" id="menu-"+data.title)
 		.submenu-left.flex 
-			img.hide-lg.nav-back(src="/images/navigate_before.svg" alt="").i-1
+			img.hide-lg.nav-back(src="/images/navigate_before.svg" alt="").i-0
 			h2= data.title
 		.submenu-right
 			each item in data.items

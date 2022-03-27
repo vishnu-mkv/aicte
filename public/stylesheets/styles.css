@@ -103,15 +103,18 @@ body {
 }
 
 body {
-    display: flex;
-    flex-direction: column;
-    gap: 2em;
     width: 100%;
     min-height: 100vh;
     line-height: 28px;
     letter-spacing: 0.5px;
     font-size: var(--fs-md);
     transition: color 500ms linear, background-color 500ms linear;
+}
+
+#site-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
 }
 
 .width-control-700 {

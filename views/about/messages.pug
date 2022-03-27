@@ -1,0 +1,30 @@
+extends ../layouts/layout
+
+block head 
+    title= "Messages - AICTE"
+
+block css 
+    link(rel="stylesheet" href="/stylesheets/about/messages.css")
+
+block content
+    section#about-messages
+        h1.page-title messages
+        .hero
+            img(src="/images/messages.svg" alt="messages")
+            p A repository of key messages from notable personalities and dignitaries.
+            
+        div
+            div#content-container
+                div#left
+                    .media 
+                        <iframe class="media-file" type="text/html" src="https://www.youtube.com/embed/Tj_y2N4NkSE?autoplay=0&showinfo=0&controls=0&origin=http://example.com" frameborder="0"></iframe>
+                span#right
+                    h2.sub-title.right message from the chairman
+                    p.quote The transformation of Indian education dates back to it being the pioneer in the 800 BCs where the undivided India had global institutions, whereas the deterioration began with the ages of modernization and industrialization.
+                    div#bottom
+                        p Prof. Anil D. Sahasrabudhe
+                        p Chairman
+                            
+
+        
+        

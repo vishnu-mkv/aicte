@@ -1,0 +1,374 @@
+#main-content > * {
+  position: relative;
+}
+
+body {
+  gap: 0;
+}
+
+#home-carousel {
+  height: calc(100vh - var(--top-offset));
+  display: flex;
+  padding-inline: var(--lr-padding);
+}
+
+#slide-container {
+  display: flex;
+  align-items: stretch;
+  overflow-x: scroll;
+  scroll-behavior: smooth;
+  inset: 0;
+  background-image: linear-gradient(to bottom, var(--primary), var(--green));
+}
+
+#slide-container > *,
+#slide-container {
+  flex: 1 0 100%;
+}
+
+.hide-scroller {
+  /* Hide scrollbar for IE, Edge and Firefox */
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.hide-scroller::-webkit-scrollbar {
+  display: none;
+}
+
+.snap-scroll {
+  scroll-snap-type: inline mandatory;
+}
+
+.snap-scroll > * {
+  scroll-snap-align: start;
+}
+
+.carousel-slide {
+  background-size: cover;
+  background-position: center top;
+  flex: 1 0 100%;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+.carousel-image-container {
+  position: absolute;
+  top: 50%;
+  transform: translateX(20%) translateY(-50%);
+  right: 0;
+  left: 0;
+}
+
+.text-wrapper {
+  padding-inline: var(--lr-p);
+  width: 100%;
+}
+
+.carousel-text-container {
+  background: white;
+  padding: 2em 1em 2em 3em;
+  position: relative;
+  z-index: 3;
+  margin-inline: 0 auto;
+  max-width: 500px;
+  font-family: "Catamaran", sans-serif;
+}
+
+.aicte-text {
+  font-size: 3.6rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  /* color: var(--primary); */
+  background-image: linear-gradient(45deg, var(--primary), var(--green));
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  width: fit-content;
+}
+
+.text-right > h2 {
+  margin-block: 1em 1.5em;
+}
+
+.carousel-text-container .btn-more {
+  background-color: #195760;
+  border-radius: 0;
+  padding: 0.2em 0.4em;
+  font-family: "Open Sans", sans-serif;
+}
+
+.carousel-text-container .btn-more #readmore {
+  aspect-ratio: 1;
+  width: 3rem;
+}
+
+#slide-indicators,
+.arrows {
+  display: flex;
+  position: absolute;
+  z-index: 4;
+  left: 0;
+  right: 0;
+}
+
+#slide-indicators {
+  gap: 0.75em;
+  justify-content: center;
+  bottom: 1em;
+  background: rgba(0, 0, 0, 0.335);
+  width: fit-content;
+  margin: auto;
+  padding: 0.2em;
+}
+
+.arrows {
+  justify-content: space-between;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.arrows > img {
+  padding: 1em 1em 1em 0.75em;
+  background-color: rgba(255, 255, 255, 0.459);
+  cursor: pointer;
+}
+
+.slide-button {
+  width: 2em;
+  height: 3px;
+  background-color: var(--white);
+  cursor: pointer;
+}
+
+.about-aicte {
+  grid-area: about;
+}
+
+.quick-links {
+  grid-area: quicklinks;
+}
+
+.announcements {
+  grid-area: announcements;
+}
+
+#home-about {
+  display: grid;
+  grid-template-areas:
+    "about quicklinks"
+    "announcements quicklinks";
+  gap: 6em;
+}
+
+#home-about h2 {
+  font-family: "Catamaran", sans-serif;
+  font-size: var(--fs-xxl);
+  font-weight: 500;
+  margin-block: 1.3em;
+}
+
+.btn-grp {
+  margin-block: 2em;
+  display: flex;
+  gap: 1em;
+  flex-wrap: wrap;
+}
+
+.btn-grp a {
+  background: var(--green);
+  border-radius: 0;
+}
+
+.roll-link-container {
+  display: grid;
+  gap: 0.6em;
+}
+
+.roll-link-container a {
+  color: var(--primary);
+  text-decoration: underline;
+}
+
+.page-roll .btn-more {
+  border-radius: 0;
+  background-color: var(--green);
+  margin-block: 1.3em;
+  padding-block: 0.2em;
+}
+
+#scholarships {
+    padding-block: 3em;
+}
+
+.home-ship-center {
+  width: 40%;
+  display: grid;
+  grid-template-rows: 3em auto 7em;
+  place-items: center;
+}
+
+.home-ship-top {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.home-ship-head {
+  color: var(--primary);
+
+  font-weight: bold;
+  font-size: 1.9rem;
+}
+.home-ship-desc {
+  font-size: var(--fs-md);
+  padding-bottom: 25px;
+}
+.home-ship-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.4em;
+  padding-bottom: 25px;
+}
+
+.home-ship-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4em;
+  padding: 0.6em 0.6em;
+  background-color: var(--primary);
+  border: none;
+  color: white;
+  width: fit-content;
+  font-size: var(--fs-md);
+  margin-bottom: 75px;
+}
+
+#home-news {
+    background-image: linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,.5)), url('/images/news-overview-hero.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.content-container {
+    margin-block: 3em;
+}
+
+.underlink {
+    gap: 0.5em;
+    border-bottom: 1px solid var(--primary);
+    margin: 2em auto;
+    padding: 0;
+    width: fit-content;
+}
+
+#home-news .news-container {
+    border: 2px solid var(--primary);
+}
+
+.underlink img {
+    filter: invert(1);
+}
+
+#active-slide {
+    background-color: black;
+}
+
+#news-press {
+    margin-block: 3em;
+}
+
+@media screen and (max-width: 1100px) {
+  .carousel-image-container {
+    transform: translateX(15%) translateY(-50%);
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .carousel-image-container {
+    transform: none;
+    inset: 0;
+  }
+
+  .carousel-slide {
+    align-items: flex-end;
+    padding-bottom: 3em;
+  }
+
+  .carousel-text-container {
+    padding: 1.5em;
+    border: rgba(0, 0, 0, 0.8);
+  }
+
+  #home-carousel {
+    height: calc((100vh - var(--top-offset)));
+  }
+
+  #home-carousel .media-file {
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    object-fit: cover;
+  }
+
+  #home-carousel .media {
+    position: static;
+    height: auto;
+    padding-bottom: 0;
+  }
+  .home-ship-top
+  {
+      display: block;
+  }
+    .home-ship-center
+    {
+        width:100%;
+    }
+}
+
+/* .home-form-inputtop
+{
+    display: flex;
+    justify-content: space-between;
+}
+.home-form-input
+{
+    width: 400px;
+    height: 50px;
+    background-color: grey;
+}
+.home-form-inputarea
+{
+    width: 100%;
+    height: 100px;
+    background-color: rgb(224, 224, 224);
+}
+.home-form-label
+{
+    color:var(--primary)
+}
+.home-form-label
+{
+    color:var(--primary)
+}
+.home-form-button
+{
+
+} */
+@media screen and (max-width: 800px) {
+  #home-about {
+    grid-template-areas:
+      "about"
+      "quicklinks"
+      "announcements";
+    gap: 1em;
+  }
+}
+
+@media screen and (max-width: 400px) {
+}

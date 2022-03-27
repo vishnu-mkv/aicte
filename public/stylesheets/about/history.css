@@ -5,6 +5,7 @@
 #right{
     float:right;
     width: 45%;
+
 }
 #right_vl{
     float:right;
@@ -19,6 +20,7 @@
     align-content: center;
     border-radius: 10px;
     border: 10px solid  #0A1045;
+    margin: 0 auto;
     
 }
 #content {
@@ -71,6 +73,19 @@
     border-right: 26px solid red;
     border-bottom: 13px solid transparent;
   }  */
+@media screen and (max-width:530px) {
+  #left {
+    grid-area: left;
+  }
+  #right{
+    grid-area: right;
+  }
 
+  #content {
+    grid-template-areas: 'left left' 'right right';
+  }
+  
 
+  
+}
 

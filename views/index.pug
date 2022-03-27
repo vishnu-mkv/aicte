@@ -1,4 +1,209 @@
 extends layouts/layout
 
+mixin getBanner(data)
+    .carousel-slide
+        .carousel-image-container
+            .media.carousel-image
+                img.media-file(src=data.image_url)
+        .text-wrapper.width-control-700
+            .carousel-text-container
+                h1.aicte-text= data.title
+                .text-right
+                    h2= data.summary
+                    a(href=`${data.url}` class="btn-more") 
+                        span= data.url_text
+                        img(src="/images/Arrow 7.svg" alt="readmore" id="readmore")
+
+mixin getPageRoll(data, title, url, className)
+    div(class=`page-roll ${className}`)
+        h2= title
+        .roll-link-container
+            each val in data
+                a(href=`${val.url}`)= val.title  
+        a.btn-more(href=`${url}`)
+            span More  
+            img(src="/images/readmore.svg" alt="readmore" id="readmore")
+
+block css
+    link(rel="stylesheet" href="/stylesheets/news/common.css")
+    link(rel="stylesheet" href="/stylesheets/news/news.css")
+    link(rel="stylesheet" href="/stylesheets/news/press-release.css")
+    link(rel="stylesheet" href="/stylesheets/index.css")
+
 block content
 
+    #home-carousel.revert-margin
+        #slide-container.snap-scroll.hide-scroller
+            each banner in banners
+                +getBanner(banner)
+
+        #carousel-controls 
+            .arrows
+                img(src="/images/navigate_before.svg" alt="previous-slide" id="prev-slide")
+                img(src="/images/navigate_before.svg" alt="next-slide" class="right-arrow" id="next-slide")
+            -var n = 0
+            #slide-indicators
+                while n < banners.length
+                    if n == 0
+                        .slide-button#active-slide(data-slideid=n++)
+                    else
+                        .slide-button(data-slideid=n++)
+    #home-about.width-control-700
+        .about-aicte
+            h2 Welcome to AICTE
+            p All India Council for Technical Education (AICTE) was set up in November 1945 as a national-level Apex Advisory Body to conduct a survey on the facilities available for technical education and to promote development in the country in a coordinated and integrated manner.
+
+            .btn-grp
+                a.btn-highlight(href="/about/") About AICTE
+                a.btn-highlight(href="/") PGDM Student Verification
+                a.btn-highlight(href="/") Centralized Support Systems
+
+        +getPageRoll(quicklinks, "Quick Links", "", "quick-links")
+        +getPageRoll(announcements, "Announcements", "", "announcements")
+
+    #home-news.width-control-700 
+        .sub-title.center News 
+        .content-container 
+            -var i=0
+            while i < 3
+                -var data = news[i++]
+                .news-container
+                    .news-bottom 
+                        .line
+                        span.date= moment(data.date).format('MMMM Do, YYYY')
+                        span.dot &bull;
+                        span.source= data.source
+                    a.headline(href=`${data.url}`)= data.headline
+                    p.content= data.content.indexOf(".") !== -1 ? data.content.substring(0, data.content.indexOf(".")) : data.content
+        a(href='/' class="flex underlink") 
+            span Read More News
+            img(src="/images/Arrow 7.svg" alt="readmore" id="readmore")
+
+    #news-press.width-control-700 
+        .sub-title.center Press Releases 
+        .content-container 
+            -var i=0
+            while i < 3
+                -var data = press[i++]
+                .news-container
+                    .news-bottom 
+                        .line
+                        span.date= moment(data.date).format('MMMM Do, YYYY')
+                    a.headline(href=`${data.url}`)= data.content
+        a(href='/' class="flex underlink") 
+            span See More Press Releases
+            img(src="/images/Arrow 7.svg" alt="readmore" id="readmore")
+
+
+    #scholarships.width-control-400
+        h2.sub-title.center Scholarships
+        <br>
+        <div class="home-ship-top">
+            <div class="home-ship-center">
+            <div class="home-ship-title">
+                <img class="home-ship-img" src="/images/home-ship-img1.svg">
+                <p class="home-ship-head">National e-Scholarship<p>
+            </div>
+   
+                <p class="home-ship-desc">National e-Scholarship is the one-stop solution to help students seek various scholarships.</p>
+           
+                <button class="home-ship-button">Apply Now  <img class="home-ship-buttonimg" src="/images/home-ship-img2.svg"></img></button>
+           
+            </div>
+            <div class="home-ship-center">
+            <div class="home-ship-title">
+                <img class="home-ship-img" src="/images/home-ship-img3.svg">
+                <p class="home-ship-head">Pragati and Saksham<p>
+            </div>
+   
+                <p class="home-ship-desc">Scholarship for girls under the Pragati Scheme and scholarship for differently-abled students under Saksham Scheme.</p>
+           
+                <button class="home-ship-button">Apply Now  <img class="home-ship-buttonimg" src="/images/home-ship-img2.svg"></img></button>
+           
+            </div>
+            <div class="home-ship-center">
+            <div class="home-ship-title">
+                <img class="home-ship-img" src="/images/home-ship-img4.svg">
+                <p class="home-ship-head">India Innovation Initiative<p>
+            </div>
+   
+                <p class="home-ship-desc">India's largest innovation challenges jointly promoted by the CII and Department of Science & Technology.</p>
+           
+                <button class="home-ship-button">Apply Now  <img class="home-ship-buttonimg" src="/images/home-ship-img2.svg"></img></button>
+              
+            </div>
+            <div class="home-ship-center">
+            <div class="home-ship-title">
+                <img class="home-ship-img" src="/images/home-ship-img5.svg">
+                <p class="home-ship-head">Vidya Lakshmi<p>
+            </div>
+   
+                <p class="home-ship-desc">Vidya Lakshmi is a first-of-its-kind portal for students seeking educational loan.</p>
+           
+                <button class="home-ship-button">Apply Now  <img class="home-ship-buttonimg" src="/images/home-ship-img2.svg"></img></button>
+           
+            </div>
+        </div>
+          <br>
+    //- h1.sub-title.center Contact Us
+    //- <div class="container">
+    //-     <div class="box">
+    //-         <section class="info">
+    //-             <h4>Contact Information</h4>
+    //-             <p>
+    //-                 <img src="/images/phone.svg" alt="phone" color="white">
+    //-                 <p>011-26131576</p>
+    //-             </p>
+    //-             <p>
+    //-                 <img src="/images/mail.svg" alt="email" color="white">
+    //-                 <p>chairman@aicte-india.org</p>
+    //-             </p>
+    //-             <p>
+    //-                 <img src="/images/location.svg" alt="location" color="white">
+    //-                 <p>Vasant Kunj, New Delhi</p>
+    //-             </p>
+    //-         </section>
+           
+    //-         <h3>Contact Form</h3>
+    //-         <form>
+    //-             <div>
+    //-                 <div class="home-form-inputtop">
+    //-                     <div class="firstname">
+    //-                         <label for="firstname" class="home-form-label">First Name</label>
+    //-                         <br>
+    //-                         <input type="text" id="fname" class="home-form-input" required>
+    //-                     </div>
+    //-                     <div class="lastname">
+    //-                         <label for="lastname" class="home-form-label">last Name</label>
+    //-                         <br>
+    //-                         <input type="text" id="lname" class="home-form-input" required>
+    //-                     </div>
+    //-                 </div>
+    //-                 <div class="home-form-inputtop">
+    //-                     <div class="email">
+    //-                         <label for="email" class="home-form-label">Email</label>
+    //-                         <br>
+    //-                         <input type="email" id="email" class="home-form-input" required>
+    //-                     </div>
+    //-                     <div class="mobileno">
+    //-                         <label for="mobileno" class="home-form-label">Mobile Number</label>
+    //-                         <br>
+    //-                         <input type="mobileno" id="mobileno" class="home-form-input" required>
+    //-                     </div>
+    //-                 </div>
+    //-                     <div class="message" >
+    //-                         <label for="message" class="home-form-label">Message</label>
+    //-                         <br>
+    //-                         <textarea id="message" class="home-form-inputarea" ></textarea>
+    //-                     </div>
+    //-                 <div class="submit">
+    //-                     <input type="submit" class="home-form-button" value="SEND MESSAGE">
+    //-                 </div>
+    //-             </div>
+    //-         </form>
+    //-     </div>
+    //- </div>
+
+
+block scripts 
+    script(src="/javascripts/index.js")     

@@ -1,0 +1,11 @@
+#nav-wrapper
+    nav#main-nav.flex.width-control-700.pd
+        #nav-left
+            a(href="/admin")  AICTE Administration
+        #nav-right.flex 
+            a(href="/logout") Log Out
+            .profile.flex    
+                span= user.nickname
+                img(src=user.picture, alt="")  
+
+

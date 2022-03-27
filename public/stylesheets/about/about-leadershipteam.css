@@ -1,3 +1,8 @@
+#main-content {
+  padding-inline: var(--lr-p);
+}
+
+
 .nunito-21 {
   font-size: var(--fs-sm);
 }
@@ -6,8 +11,9 @@
   width: 200px;
 }
 .leaders-image-head {
-  height: 220px;
-  width: 220px;
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
 }
 .leader-name {
   font-weight: 600;
@@ -25,15 +31,17 @@
 .flex-wrap-head {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  gap: 150px;
+  width: 100%;
+  padding-inline: 1em;  
+  gap: 2em;
 }
 
 .center {
   display: flex;
   justify-content: center;
-  background-color: #e5e5e5;
+  background-color: var(--grey3);
   align-items: center;
   padding-top: 20px;
   padding-bottom: 20px;
@@ -45,7 +53,8 @@
 .border-grey {
   border-bottom: 3px solid var(--grey2);
 }
-.flex {
+
+#main-content .flex {
   display: flex;
   justify-content: space-between;
   align-items: center;

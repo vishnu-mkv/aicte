@@ -15,14 +15,14 @@ router.get('/organisation-structure', function(req, res) {
     res.render('./about/organisation-structure.pug');
 });
 
+
 // /messages
 router.get('/messages', function(req, res) {
     res.render('./about/messages.pug');
 });
 
-// /history
-router.get('/history', function(req, res) {
-    res.render('./about/history.pug');
+// /office
+router.get('/office', function(req, res) {
+    res.render('./about/office.pug');
 });
-
 module.exports = router;

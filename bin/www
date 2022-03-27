@@ -6,7 +6,7 @@
 console.log("Starting...");
 
 var app = require('../app');
-var connectToDB = require('../data');
+var connectToDB = require('../data-loader');
 var debug = require('debug')('aicte:server');
 var http = require('http');
 

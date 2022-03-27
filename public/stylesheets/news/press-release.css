@@ -1,23 +1,26 @@
 #news-press #content-container {
-    display: grid;
-    gap: 1em;
-    background-color: rgb(255, 253, 251);
-    padding: 0.5em;
+    gap: 2.5em;
+    justify-content: start;
 }
 
 #news-press {
     padding-inline: var(--lr-p);
 }
 
+.dark #news-press .news-container {
+    --c: rgba(39, 39, 39, 0.1);
+}
+
 #news-press .news-container {
+    --c: rgba(0, 0, 0, 0.1);
     grid-template-rows: none;
-    border-bottom: 2px solid rgb(63, 63, 63);
-    padding-inline: 0;
-    background-color: transparent;
+    box-shadow: 4px 4px 4px 0px var(--c);
+    background-color: var(--white);
+    flex: 0 0 100%;
+    padding: 0.5em;
 }
 
 #news-press .headline {
-    font-size: var(--fs-lg);
-    color: var(--primary2);
+    font-size: var(--fs-md);
+    color: var(--primary);
 }
-

@@ -1,0 +1,21 @@
+extends ../layouts/admin-layout
+
+block css 
+    link(rel="stylesheet", href="/stylesheets/admin/home.css")
+
+block content
+    #admin-panel
+        h2.sub-title.left Site Administration
+        
+        .model-content
+            each group in modelData
+                .model-container
+                    h3.group-header= group.groupName
+                    .models
+                        each model in group.models 
+                            -var url = "/admin/"+model.replace(/\s+/g, '-').toLowerCase()
+                            div.model.flex
+                                a(href=url).model-name= model
+                                a(href=url+'/new').flex.action
+                                    img(src="/images/add.svg", alt="") 
+                                    span Add

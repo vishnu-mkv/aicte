@@ -1,0 +1,33 @@
+.group-header, .model {
+    padding: 0.5em 1em;
+}
+
+.group-header {
+    background-color: var(--primary2);
+    color: white;
+    font-size: var(--fs-lg);
+    text-transform: uppercase;
+}
+
+.model-content {
+    display: grid;
+    gap: 2em;
+}
+
+.model {
+    justify-content: space-between;
+    align-items: center;
+}
+
+.model-name {
+    font-weight: 500;
+}
+
+.model:nth-child(even) {
+    background-color: var(--gray4);
+}
+
+.action {
+    gap : 0.5em;
+    place-items: center;
+}

@@ -18,7 +18,7 @@ app.use(helmet.contentSecurityPolicy({
       connectSrc: ["'self'", "ws://localhost:35729", "https://some.other.domain.com"],
       styleSrc: ["'self'", "fonts.googleapis.com", "'unsafe-inline'", "https://aicte-bot.live"],
       fontSrc: ["'self'", "fonts.gstatic.com"],
-      imgSrc: ["'self'", "https://avatars.githubusercontent.com", "https://www.aicte-india.org", "data:", "https://another-domain.com"],
+      imgSrc: ["'self'", "https://avatars.githubusercontent.com", "https://www.aicte-india.org", "data:", "https://lh3.googleusercontent.com"],
       frameSrc: ["'self'", "https://aicte-bot.live", "https://www.youtube.com"]
   }
 }));

@@ -9,10 +9,8 @@ const schemesRouter = require('./schemes');
 const educationRouter = require('./education');
 const opportunitiesRouter = require('./opportunities');
 const bulletinsRouter = require('./bulletins');
+const adminRouter = require('./admin/admin');
 const apiRouter = require('./api/api');
-
-const News = require('../data/models/news.js');
-const PressRelease = require('../data/models/press-release.js');
 
 router.use('/about', aboutRouter);
 router.use('/api', apiRouter);
@@ -23,6 +21,7 @@ router.use('/schemes', schemesRouter);
 router.use('/education', educationRouter);
 router.use('/opportunities', opportunitiesRouter);
 router.use('/bulletins', bulletinsRouter);
+router.use('/admin', adminRouter)
 
 var bureauesData = [
   {

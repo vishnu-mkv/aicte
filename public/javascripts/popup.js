@@ -1,7 +1,7 @@
 // popup
 // import popup.css, popup.js 
 //  dependancy overlay.js
-// import overlay.js
+// import overlay.js, overlay.css
 // 'open-popup' event to open popup - parameters id, getPopupContent()
 // 'close-popup' event to close popup
 // 'getPopupContent()' method - return value should be HTML element to be inserted in popup
@@ -12,7 +12,7 @@ const getPopup = (getPopupContent) => {
     var template = document.createElement('template');
     template.innerHTML = `
         <div class="popup">
-            <img src="/images/close-icon.svg" id="close-popup">
+            <img src="/images/close-icon.svg" id="close-popup" class="i-1">
             <div class="popup-content"></div>
         </div>
     `.trim();

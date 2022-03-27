@@ -1,0 +1,58 @@
+#page-content {
+    position: relative;
+}
+
+#content-container {
+    text-align: left;
+    width: 100%;
+}
+
+.header {
+    margin-bottom: 1.5em;
+    justify-content: space-between;
+}
+
+.header, .data-container {
+    align-items: center;
+}
+
+.header h3 {
+    font-size: var(--fs-bg);
+    font-weight: 700;
+    color: var(--primary);
+}
+
+.header-right {
+    gap: 0.5em;
+    background-color: var(--black);
+    color: white;
+    padding: 0.1em 0.4em;
+    border-radius: 0.4em;
+}
+
+.header-right img {
+    filter: invert(1);
+}
+
+.headline {
+    font-weight: 500;
+}
+
+.table-header {
+    font-weight: 600;
+    font-size: 1.7rem;
+    color: var(--white);
+    background-color: var(--primary2);
+}
+
+#content-container td, #content-container th{
+    padding: 0.8em 0.5em;
+}
+
+.data-container:nth-child(even) {
+    background-color: var(--gray4);
+}
+
+.t-right {
+    text-align: right;
+}

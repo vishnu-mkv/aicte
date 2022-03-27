@@ -1,10 +1,31 @@
 #nav-container {
     color: var(--white);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+}
+
+#main-content {
+    margin-top: var(--top-offset);
+}
+
+#header-wrapper {
+    background-color: var(--nav-color);
+}
+
+.dark #status-wrapper {
+    background-color: rgb(15, 15, 15);
+}
+
+#dark, #light {
+    cursor: pointer;
 }
 
 #status-wrapper {
     background-color: var(--primary2);
     height: var(--status-bar-height);
+    color: white;
 }
 
 #status {
@@ -14,6 +35,10 @@
     padding-block: 0.5em;
     max-height: var(--status-bar-height);
     font-size: var(--fs-sm);
+}
+
+.hindi {
+    font-family: 'Hind', sans-serif;
 }
 
 #status img {
@@ -60,12 +85,38 @@
 #aicte-logo {
     width: 4.2em;
     aspect-ratio: 1;
-    transform: translateY(-30%);
+    transform: translateY(-20%);
 }
 
 #nav-left a {
     color: var(--black);
     font-weight: 600;
+    letter-spacing: 0.5px;
+    line-height: 1.5em;
+}
+
+#nav-left {
+    height: var(--nav-height);
+}
+
+.logo {
+    display: flex;
+    flex-direction: column;
+    font-size: 1.25rem;
+    position: relative;
+    color: #272727;
+}
+
+.logo::after {
+    content: '';
+    background-color: var(--black);
+    position: absolute;
+    height: 1.3px;
+    width: 100%;
+    left: 0;
+    right: 0;
+    top: calc(44%);
+    transform: translateY(50%);
 }
 
 #nav-wrapper {
@@ -182,7 +233,7 @@
     width: 2px;
     height: 75%;
     position: absolute;
-    background-color: white;
+    background-color: var(--white);
     left: calc(var(--gap) / -2);
     top: 12.5%;
 }

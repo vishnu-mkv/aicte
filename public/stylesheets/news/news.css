@@ -1,4 +1,9 @@
+.dark .news-content {
+    --c: rgb(27, 27, 27);
+}
+
 .news-content {
-    background-color: rgb(245, 250, 255);
+    --c: rgb(245, 250, 255);
+    background-color: var(--c);
     padding-block: 2em;
 }

@@ -19,6 +19,7 @@
     gap: 1em;
     font-size: var(--fs-sm);
     color: var(--light-black);
+    max-height: 2em;
 }
 
 #content-container,
@@ -29,9 +30,13 @@
     justify-content: center;
 }
 
+.dark .news-container {
+    background-color: var(--milk-white);
+}
+
 .news-container {
-    display: grid;
-    grid-template-rows: 2em auto auto;
+    display: flex;
+    flex-direction: column;
     justify-content: start;
     gap: 1em;
     padding: 1em;

@@ -1,0 +1,132 @@
+.about-office-head
+{
+    font-size: var(--fs-bg);
+    padding-bottom: 20px;
+}
+.about-office-subhead
+{
+    font-size: var(--fs-sm);
+}
+.about-office-button
+{
+    width: fit-content;
+    height: fit-content;
+    background-color: #0A1045;
+    border: none;
+    color: white;
+    padding:10px 15px;
+
+
+}
+.about-office-insidebutton
+{
+    color: var(--yellow);
+    font-size: var(--fs-sm);
+}
+.about-office-linebutton
+{
+    display: flex;
+    justify-content: space-between;
+    margin: 0px 200px;
+}
+.about-office-indiatop
+{
+    background-image: url(/images/about-officers-img.svg);
+    background-size:contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+#about-office-buttontop
+{
+    text-align: center;
+}
+#about-office-buttonbottom
+{
+    text-align: center;
+}
+.news-event-image
+{
+    max-width: 70%;
+    max-height: 400px;
+    min-height: 350px;
+    object-fit: contain;
+    
+}
+
+
+.center-event
+{
+  
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    place-items: center;
+    place-content: center;
+    background-color: #F3F3F3;
+}
+.line {
+    width: 25%;
+    min-width: 30px;
+    height: 2px;
+    background-color: var(--orange);
+    border-radius: 2px;
+    margin-top: 20px;
+    
+}
+.rows
+{
+    display: flex;
+    flex-wrap:nowrap;
+    
+    
+}
+.news-event-name
+{
+    font-size: var(--fs-lg);
+    font-weight:bold;
+}
+
+.news-event-description
+{
+    font-size: var(--fs-md);
+}
+@media only screen and (max-width :700px) {
+
+    .rows
+    {
+       
+        display: flex;
+        flex-wrap:wrap;
+        margin-bottom: 50px;
+ 
+    }
+    .rows1
+    {
+       
+        display: flex;
+        flex-wrap:wrap-reverse;
+        margin-bottom: 50px;
+
+ 
+    }
+
+    .news-event-name
+    {
+        padding-top: 50px;
+    }
+    .news-event-description
+    {
+        padding-bottom: 50px;
+    }
+    .news-event-image
+{
+    max-width: 100%;
+    max-height: 400px;
+    min-height: 100px;
+    object-fit: contain;
+    
+}
+
+   
+}

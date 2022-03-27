@@ -1,27 +1,31 @@
 @import url("https://fonts.googleapis.com/css2?family=Catamaran:wght@600;700&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Hind:wght@600&display=swap");
 
 html {
     font-size: 9.58px;
-    font-family: "Open-sans", sans-serif;
+    font-family: "Open sans", sans-serif;
 }
 
 *,
 *::after,
-*::before
-{
+*::before {
     box-sizing: border-box;
 }
 
 :root {
     --primary: #004b76;
+    --primaryc: #004b76;
     --orange: var(--primary);
     --green: #007430;
     --primary2: #062135;
+    --primary3: #68bbea;
+    --primary4: #69d6e8;
     --yellow: #f9e900;
     --black: #000;
     --black2: rgb(27, 27, 27);
     --grey: #fffff0;
     --grey2: #cccccc;
+    --grey3: #e5e5e5;
     --milk-white: #fffef7;
     --white: #ffffff;
     --light-black: #4f4f4f;
@@ -40,9 +44,16 @@ html {
     --lr-p: 1em;
     --status-bar-height: 3rem;
     --primary-nav-height: 5rem;
+    --t-white: rgba(255, 255, 255, 0.5);
+    --t-white2: rgba(255, 255, 255, 0.9); 
+    --t-white3: rgba(255, 255, 255, 0.75); 
+    --white3: rgb(252 252 252);
+    --nav-color: #eaf6ff;
     --top-offset: calc(
         var(--status-bar-height) + var(--nav-height) + var(--primary-nav-height)
     );
+    color: var(--black);
+    background-color: var(--white);
 }
 
 @media screen and (max-width: 700px) {
@@ -51,20 +62,59 @@ html {
     }
 }
 
+.dark {
+    --primary: #0d91dd;
+    --orange: var(--primary);
+    --green: #1be970;
+    --primary2: #3d89c4;
+    --primary3: #367da7;
+    --primary4: #69d6e8;
+    --yellow: #f9e900;
+    --black: #fff;  
+    --black2: rgb(236, 236, 236);
+    --grey: #a0a0a0;
+    --grey2: #3a3a3a;
+    --grey3: #313131;
+    --milk-white: #1a1a1a;
+    --white: rgb(22, 22, 22);
+    --light-black: #cecece;
+    --gray4: #111111;
+    --paper-white: #2b2b2b;
+    --t-white: rgba(0, 0, 0, 0.5); 
+    --t-white2: rgba(0, 0, 0, 0.9); 
+    --t-white3: rgba(0, 0, 0, 0.75); 
+    --white3: rgb(44, 44, 44);
+    --nav-color: var(--white);
+    color: var(--black);
+    background-color: var(--white);
+}
+
+.dark .i-1 {
+    filter: invert(1);
+}
+
+.dark .i-0 {
+    filter: invert(0);
+}
+
 html,
 body {
     overflow-x: hidden;
 }
 
 body {
-    display: flex;
-    flex-direction: column;
-    gap: 2em;
     width: 100%;
     min-height: 100vh;
     line-height: 28px;
     letter-spacing: 0.5px;
     font-size: var(--fs-md);
+    transition: color 500ms linear, background-color 500ms linear;
+}
+
+#site-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
 }
 
 .width-control-700 {
@@ -81,13 +131,21 @@ body {
     display: flex;
 }
 
+.pd {
+    padding-inline: var(--lr-p);
+}
+
+.gray-bg {
+    background-color: var(--gray4);
+}
+
 /* <button class="btn-highlight></button> */
 .btn-highlight {
     padding: 0.2em 0.4em;
     background-color: var(--orange);
     border: none;
     border-radius: 0.3em;
-    color: white;
+    color: var(--white);
     height: fit-content;
 }
 
@@ -115,9 +173,21 @@ body {
     background-color: var(--primary);
     border: none;
     border-radius: 0.3em;
-    color: white;
+    color: var(--white);
     width: fit-content;
     font-size: var(--fs-md);
+}
+
+.underlink {
+    gap: 0.5em;
+    color: var(--primary);
+    margin: 1em auto;
+    padding: 0;
+    width: fit-content;
+}
+
+.underlink img {
+    filter: invert(1);
 }
 
 .btn-more #readmore {
@@ -138,7 +208,7 @@ body {
     width: fit-content;
     --xtra-len: 15%;
     padding-bottom: 0.3em;
-    margin-bottom: 2em;
+    margin-bottom: 1.5em;
     font-family: "Catamaran", sans-serif;
 }
 

@@ -1,0 +1,40 @@
+#detailsContainer input, #detailsContainer textarea {
+    width: 100%;
+    border: none;
+    background-color: var(--gray4);
+    padding: 0.6em 0.3em;   
+}
+
+#detailsContainer textarea {
+    resize: vertical;
+}
+
+.uploader, .deleter {
+    background-color: var(--grey2);
+    padding-inline: 0.5em;
+}
+
+.save {
+    background-color: var(--green);
+}
+
+.field-adder {
+    background: transparent;
+    border: 2px solid var(--primary);
+    color: var(--primary);
+    border-radius: 0;
+    font-weight: 600;
+    margin-block: 1em;
+    padding: 0.1em 0.3em;
+    height: auto;
+}
+
+.array-template {
+    display: none;
+}
+
+.array-fields {
+    display: grid;
+    gap: 1em;
+}
+

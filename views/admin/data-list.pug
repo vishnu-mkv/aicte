@@ -1,0 +1,30 @@
+extends ../layouts/admin-layout 
+
+block css 
+    link(rel="stylesheet" href="/stylesheets/partials/paginate.css")
+    link(rel="stylesheet" href="/stylesheets/partials/loader.css")
+    link(rel="stylesheet" href="/stylesheets/admin/list.css")
+
+block content 
+
+    .header.flex#scroll-here 
+        h3 #{name}
+        a(href=modelId+'/new').header-right.flex
+            span Add #{name}
+            img(src="/images/add.svg", alt="")
+
+    #page-content
+        table#content-container(data-modelid=modelId, data-headline=headline, data-date=date)
+            
+        -var api = API
+        include ../partials/paginate
+
+        -var message = "Fetching " + name + "..."
+        -var id = "loader-paginate"
+        include ../partials/loader
+
+block scripts 
+    script(src="/javascripts/admin/admin-paginate.js" defer)  
+    script(src="/javascripts/paginate.js" defer) 
+    script(src="/javascripts/loader.js" defer) 
+

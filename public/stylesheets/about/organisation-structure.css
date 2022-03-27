@@ -1,8 +1,7 @@
-* {
-	padding: 0px;
-	margin: 0px;
-	box-sizing: border-box;
+#main-content {
+	padding-inline: var(--lr-p);
 }
+
 .tree {
 	width: 100%;
 	height: auto;
@@ -85,14 +84,13 @@
 	border-radius: 5px;
 	transition: .5s;
     display: grid;
-    grid-template-rows: auto 2em;
     margin: auto;
     width: 200px;
+	background: var(--gray4);
 }
 .tree li a img {
-	width: 50px;
-	height: 50px;
-	border-radius: 100px;
+	aspect-ratio: 1;
+	width: 10em;
 	margin: auto;
 }
 .tree li a span {
@@ -103,16 +101,8 @@
 	text-transform: uppercase;
 	letter-spacing: 1px;
 	font-weight: 500;
+	line-height: 1.4em;
 }
-/* #tree-row-1 {
-position: absolute;
-width: 200px;
-height: 200px;
-left: 864px;
-top: 371px;
-
-background: url("/images/chairman.svg");
-} */
 
 #tree-row-1::before {
     content: none;
@@ -129,6 +119,7 @@ background: url("/images/chairman.svg");
         width: 0;
         height: calc(100% + 1em);
         top: -100%;
+		left: 49.9%;;
     }
 }
 
@@ -144,8 +135,8 @@ background: url("/images/chairman.svg");
     }
 
     #connector::before {
-        height: calc(100% + 4px);
-        top: -60px;
+        height: 99.2%;
+        top: -16%;
         left: calc(var(--extend-left) * -1);
     } 
 

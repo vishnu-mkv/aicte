@@ -14,11 +14,11 @@ html(lang="en")
         block css 
 
     body 
+        #site-wrapper
+            include ../partials/admin-nav
 
-        include ../partials/admin-nav
-
-        main#main-content.width-control-700.pd
-            block content
+            main#main-content.width-control-700.pd
+                block content
 
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>

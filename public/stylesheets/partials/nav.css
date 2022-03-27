@@ -1,5 +1,13 @@
 #nav-container {
     color: var(--white);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+}
+
+#main-content {
+    margin-top: var(--top-offset);
 }
 
 #header-wrapper {

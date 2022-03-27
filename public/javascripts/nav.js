@@ -1,3 +1,5 @@
+window.botpressWebChat.init({ host: 'https://aicte-bot.live', botId: 'aictebot' })
+
 $(document).ready(function () {
 
     let currentOpenMenu = null;

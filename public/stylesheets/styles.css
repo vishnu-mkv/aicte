@@ -229,8 +229,8 @@ body {
     margin-left: auto;
 }
 
-/* 
-div.hero
+
+/* div.hero
     img(src="")
     p */
 .hero {
@@ -250,6 +250,7 @@ div.hero
     object-fit: contain;
     object-position: center;
 }
+
 
 .hero p {
     font-weight: 400;

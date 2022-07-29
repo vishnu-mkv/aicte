@@ -87,4 +87,12 @@ $(document).ready(function () {
 
   if (localStorage.getItem("dark") === "true") switchToDark();
   else switchToLight();
+
+  window.onscroll = function () {
+    if (window.scrollY > 100) {
+      $("#nav-container").addClass("scrolled");
+    } else {
+      $("#nav-container").removeClass("scrolled");
+    }
+  };
 });

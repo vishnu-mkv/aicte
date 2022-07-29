@@ -1,5 +1,5 @@
-const createContent = data => {
-    return `
+const createContent = (data) => {
+  return `
         <div class="media-container">
             <div class='media'>
                 <iframe class="media-file" type="text/html"
@@ -9,4 +9,4 @@ const createContent = data => {
             <p>${data.title}</p>
         </div>
     `;
-}
+};

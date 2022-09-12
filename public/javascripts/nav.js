@@ -1,11 +1,11 @@
-try {
-  window.botpressWebChat.init({
-    host: "https://aicte-bot.live",
-    botId: "aictebot",
-  });
-} catch (error) {
-  console.log("Couldn't load botpress");
-}
+// try {
+//   window.botpressWebChat.init({
+//     host: "https://aicte-bot.live",
+//     botId: "aictebot",
+//   });
+// } catch (error) {
+//   console.log("Couldn't load botpress");
+// }
 
 $(document).ready(function () {
   let currentOpenMenu = null;
